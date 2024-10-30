@@ -5,8 +5,20 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Santiago Zarate | Portfolio">
-  <header>This is my portfolio</header>
-  <section class="grid grid-cols-2 gap-2">
-    {projects.map((project) => <Card {...project} />)}
+  <section class="flex flex-col gap-12">
+    <section class="flex flex-col gap-4">
+      <h3 class="font-semibold">About Me</h3>
+      <p class="w-full prose prose-invert text-secondary">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum rerum,
+        tenetur odio cupiditate commodi possimus nulla quo eum repellendus
+        impedit, nam itaque nesciunt?
+      </p>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="font-semibold">Projects</h3>
+      <ul class="grid grid-cols-2 gap-2">
+        {projects.map((project) => <Card {...project} />)}
+      </ul>
+    </section>
   </section>
 </Layout>

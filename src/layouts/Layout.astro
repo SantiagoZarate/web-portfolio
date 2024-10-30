@@ -1,4 +1,5 @@
 ---
+import Header from "../components/common/Header.astro";
 import "../styles/index.css";
 interface Props {
   title: string;
@@ -18,7 +19,8 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="">
-    <section class="max-w-screen-lg mx-auto">
+    <section class="max-w-screen-tablet mx-auto pt-36">
+      <Header />
       <slot />
     </section>
   </body>

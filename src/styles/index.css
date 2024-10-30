@@ -4,5 +4,10 @@
 @tailwind utilities;
 
 body {
-  @apply bg-background text-primary;
+  @apply bg-background text-primary font-inter;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-VariableFont_opsz,wght.ttf");
 }
