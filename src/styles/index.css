@@ -1,0 +1,8 @@
+@import url("./colors.css");
+
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background text-primary;
+}

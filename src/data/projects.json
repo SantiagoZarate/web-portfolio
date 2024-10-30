@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Lucky Pick",
+    "description": "descripcion corta",
+    "stack": ["react", "trpc", "express"],
+    "href": "https://lucky-pick.com"
+  },
+  {
+    "title": "Lucky Pick",
+    "description": "descripcion corta",
+    "stack": ["react", "trpc", "express"],
+    "href": "https://lucky-pick.com"
+  },
+  {
+    "title": "Lucky Pick",
+    "description": "descripcion corta",
+    "stack": ["react", "trpc", "express"],
+    "href": "https://lucky-pick.com"
+  }
+]
