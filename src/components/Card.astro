@@ -9,12 +9,19 @@ interface Props {
 const { href, title, description, stack } = Astro.props;
 ---
 
-<li class="border border-border rounded-lg p-4">
-  <a href={href} class="flex flex-col gap-2">
-    <h2>
-      {title}
-      <span>&rarr;</span>
-    </h2>
+<li
+  class="border border-border rounded-lg group bg-background hover:bg-primary/5"
+>
+  <a href={href} class="flex flex-col gap-2 p-4">
+    <header class="flex gap-1 items-center">
+      <h2>
+        {title}
+      </h2>
+      <img
+        src="/svg/arrow-right.svg"
+        class="size-4 group-hover:translate-x-1 transition"
+      />
+    </header>
     <p>
       {description}
     </p>
