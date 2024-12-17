@@ -6,11 +6,11 @@ interface Props {
   stack: string[];
 }
 
-const { href, title, description } = Astro.props;
+const { href, title, description, stack } = Astro.props;
 ---
 
 <li class="border border-border rounded-lg p-4">
-  <a href={href}>
+  <a href={href} class="flex flex-col gap-2">
     <h2>
       {title}
       <span>&rarr;</span>
@@ -18,5 +18,14 @@ const { href, title, description } = Astro.props;
     <p>
       {description}
     </p>
+    <ul class="flex gap-1">
+      {
+        stack.map((item) => (
+          <li class="text-xs capitalize bg-muted px-2 py-1 rounded-md">
+            {item}
+          </li>
+        ))
+      }
+    </ul>
   </a>
 </li>

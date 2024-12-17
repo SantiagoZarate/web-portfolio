@@ -10,6 +10,7 @@ export default {
         primary: "hsl(var(--primary))",
         secondary: "hsl(var(--secondary))",
         border: "hsl(var(--border))",
+        muted: "hsl(var(--muted))",
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],

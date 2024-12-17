@@ -11,3 +11,17 @@ body {
   font-family: "Inter";
   src: url("./fonts/Inter-VariableFont_opsz,wght.ttf");
 }
+
+body::before {
+  inset: 0;
+  background-blend-mode: difference;
+  background-image: url("../../images/pattern.svg");
+  background-position-x: 40%;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  content: "";
+  inset: 0;
+  opacity: 0.4;
+  position: absolute;
+  pointer-events: none;
+}
