@@ -1,18 +1,12 @@
 ---
-import Card from "../components/Card.astro";
 import HeroSection from "../components/sections/hero-section.astro";
-import projects from "../data/projects.json";
+import ProjectsSection from "../components/sections/projects-section.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Santiago Zarate | Portfolio">
   <section class="flex flex-col gap-12">
     <HeroSection />
-    <section class="flex flex-col gap-4">
-      <h3 class="font-semibold">Projects</h3>
-      <ul class="grid grid-cols-2 gap-2">
-        {projects.map((project) => <Card {...project} />)}
-      </ul>
-    </section>
+    <ProjectsSection />
   </section>
 </Layout>

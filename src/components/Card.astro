@@ -10,7 +10,7 @@ const { href, title, description, stack } = Astro.props;
 ---
 
 <li
-  class="border border-border rounded-lg group bg-background hover:bg-primary/5 transition"
+  class="project-card border border-border rounded-lg group/card bg-background hover:bg-primary/5 transition"
 >
   <a href={href} class="flex flex-col gap-2 p-2">
     <header class="flex gap-1 items-center">
@@ -19,7 +19,7 @@ const { href, title, description, stack } = Astro.props;
       </h2>
       <img
         src="/svg/arrow-right.svg"
-        class="size-4 group-hover:translate-x-1 transition"
+        class="size-4 group-hover/card:translate-x-1 transition"
       />
     </header>
     <p class="text-sm text-secondary">
