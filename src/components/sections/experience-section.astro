@@ -1,42 +1,42 @@
 ---
-import experiences from "../../data/experience.json";
+import experiences from '../../data/experience.json'
 ---
 
-<section class="flex flex-col gap-4 group">
-  <header class="flex items-center [&>:first-child]:mr-2">
+<section class='group flex flex-col gap-4'>
+  <header class='flex items-center [&>:first-child]:mr-2'>
     <img
-      src="/svg/cube.svg"
-      class="size-6 text-white bg-muted p-1 rounded-md border border-primary/20 group-hover:translate-x-0 translate-x-4 opacity-0 group-hover:opacity-100 transition"
-      alt="projects icon"
+      src='/svg/cube.svg'
+      class='size-6 translate-x-4 rounded-md border border-primary/20 bg-muted p-1 text-white opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100'
+      alt='projects icon'
     />
     <h3
-      class="font-semibold group-hover:translate-x-0 -translate-x-8 transition"
+      class='-translate-x-8 font-semibold transition group-hover:translate-x-0'
     >
       Experience
     </h3>
   </header>
   <section
-    class="flex flex-col border-l border-muted border-dashed pl-4 ml-4 gap-6"
+    class='ml-4 flex flex-col gap-6 border-l border-dashed border-muted pl-4'
   >
-    <header class="flex gap-2 items-center">
+    <header class='flex items-center gap-2'>
       <img
-        src="/images/no-country.png"
-        class="size-10 rounded-lg object-cover border border-primary/20"
+        src='/images/no-country.png'
+        class='size-10 rounded-lg border border-primary/20 object-cover'
       />
-      <section class="flex flex-col gap-1">
-        <p class="font-bold">No Country</p>
-        <p class="text-sm">Jobs Simulation platform</p>
+      <section class='flex flex-col gap-1'>
+        <p class='font-bold'>No Country</p>
+        <p class='text-sm'>Jobs Simulation platform</p>
       </section>
     </header>
-    <ul class="flex flex-col gap-2 divide-y divide-border">
+    <ul class='flex flex-col gap-2 divide-y divide-border'>
       {
         experiences.map((exp) => (
-          <li class="flex justify-between items-center flex-wrap py-2">
-            <section class="flex flex-col gap-1">
-              <p class="font-semibold">{exp.project}</p>
-              <p class="text-sm text-secondary">{exp.role}</p>
+          <li class='flex flex-wrap items-center justify-between py-2'>
+            <section class='flex flex-col gap-1'>
+              <p class='font-semibold'>{exp.project}</p>
+              <p class='text-sm text-secondary'>{exp.role}</p>
             </section>
-            <section class="flex gap-1 text-xs">
+            <section class='flex gap-1 text-xs'>
               <p>{exp.since} -</p>
               <p>{exp.until}</p>
             </section>
@@ -45,17 +45,17 @@ import experiences from "../../data/experience.json";
       }
     </ul>
   </section>
-  <footer class="flex *:flex-1 gap-2">
+  <footer class='flex gap-2 *:flex-1'>
     <button
-      class="border border-border rounded-lg font-semibold text-sm py-2 hover:bg-muted transition flex gap-2 items-center justify-center"
+      class='flex items-center justify-center gap-2 rounded-lg border border-border py-2 text-sm font-semibold transition hover:bg-muted'
     >
-      <img src="/svg/cv.svg" class="size-4" />
+      <img src='/svg/cv.svg' class='size-4' />
       Download cv</button
     >
     <button
-      class="border border-border rounded-lg font-semibold text-sm py-2 hover:bg-muted transition flex gap-2 items-center justify-center"
+      class='flex items-center justify-center gap-2 rounded-lg border border-border py-2 text-sm font-semibold transition hover:bg-muted'
     >
-      <img src="/svg/download.svg" class="size-4" />
+      <img src='/svg/download.svg' class='size-4' />
       Read cv</button
     >
   </footer>
