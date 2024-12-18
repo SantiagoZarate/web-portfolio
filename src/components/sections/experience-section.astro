@@ -33,7 +33,7 @@ const { experience, cv } = getI18n(Astro.currentLocale)
           </header>
           <ul class='flex flex-col gap-2 divide-y divide-border last:pb-6'>
             {exp.jobs.map((project) => (
-              <li class='flex flex-wrap items-center justify-between gap-3 py-2'>
+              <li class='experience-project flex flex-wrap items-center justify-between gap-3 py-2'>
                 <section class='flex flex-col gap-1'>
                   <p class='font-semibold'>{project.project}</p>
                   <p class='text-sm text-secondary'>{project.role}</p>
@@ -66,7 +66,7 @@ const { experience, cv } = getI18n(Astro.currentLocale)
 </section>
 
 <script>
-  import { animate, inView } from 'motion'
+  import { animate, inView, stagger } from 'motion'
 
   animate('.experience-section', {
     opacity: 0
@@ -84,6 +84,19 @@ const { experience, cv } = getI18n(Astro.currentLocale)
         {
           type: 'spring',
           duration: 1
+        }
+      )
+      animate(
+        '.experience-project',
+        {
+          x: [100, 0],
+          opacity: [0, 1],
+          filter: ['blur(10px)', 'blur(0px)']
+        },
+        {
+          type: 'spring',
+          duration: 1,
+          delay: stagger(0.2)
         }
       )
     },
