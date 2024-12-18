@@ -1,0 +1,26 @@
+<section class="flex flex-col gap-4">
+  <h3 class="hero-child font-semibold">About Me</h3>
+  <section class="w-full prose prose-invert text-secondary">
+    <p class="hero-child">Hi! 👋</p>
+    <p class="hero-child">
+      I’m <span class="font-semibold text-primary">Santiago Zarate</span>, a
+      fullstack web Developer from Argentina with a passion for building
+      intuitive UIs, and creating smooth, subtle animations to enhance user
+      experiences.
+    </p>
+  </section>
+</section>
+
+<script>
+  import { animate, stagger } from "motion";
+
+  animate(
+    ".hero-child",
+    { opacity: [0, 1], y: [100, 0], filter: ["blur(10px)", "blur(0px)"] },
+    {
+      type: "spring",
+      duration: 2,
+      delay: stagger(0.1),
+    }
+  );
+</script>

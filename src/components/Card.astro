@@ -3,7 +3,7 @@ interface Props {
   title: string;
   description: string;
   href: string;
-  stack: string[];
+  stack: { name: string; icon: string }[];
 }
 
 const { href, title, description, stack } = Astro.props;
@@ -14,7 +14,7 @@ const { href, title, description, stack } = Astro.props;
 >
   <a href={href} class="flex flex-col gap-2 p-2">
     <header class="flex gap-1 items-center">
-      <h2>
+      <h2 class="font-semibold">
         {title}
       </h2>
       <img
@@ -22,14 +22,15 @@ const { href, title, description, stack } = Astro.props;
         class="size-4 group-hover:translate-x-1 transition"
       />
     </header>
-    <p>
+    <p class="text-sm text-secondary">
       {description}
     </p>
-    <ul class="flex gap-1">
+    <ul class="flex flex-wrap gap-1">
       {
         stack.map((item) => (
-          <li class="text-xs capitalize bg-muted px-2 py-1 rounded-md">
-            {item}
+          <li class="text-xs bg-muted px-2 py-1 rounded-[4px] flex items-center gap-1 border border-secondary/15">
+            <img src={item.icon} class="size-4" alt="" />
+            {item.name}
           </li>
         ))
       }
