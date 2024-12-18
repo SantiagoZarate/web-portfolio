@@ -2,61 +2,92 @@
 import experiences from '../../data/experience.json'
 ---
 
-<section class='group flex flex-col gap-4'>
+<section class='experience-section group/exp flex flex-col gap-4'>
   <header class='flex items-center [&>:first-child]:mr-2'>
     <img
-      src='/svg/cube.svg'
-      class='size-6 translate-x-4 rounded-md border border-primary/20 bg-muted p-1 text-white opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100'
+      src='/svg/briefcase.svg'
+      class='size-6 translate-x-4 rounded-md border border-primary/20 bg-muted p-1 text-white opacity-0 transition group-hover/exp:translate-x-0 group-hover/exp:opacity-100'
       alt='projects icon'
     />
     <h3
-      class='-translate-x-8 font-semibold transition group-hover:translate-x-0'
+      class='-translate-x-8 font-semibold transition group-hover/exp:translate-x-0'
     >
       Experience
     </h3>
   </header>
-  <section
-    class='ml-4 flex flex-col gap-6 border-l border-dashed border-muted pl-4'
-  >
-    <header class='flex items-center gap-2'>
-      <img
-        src='/images/no-country.png'
-        class='size-10 rounded-lg border border-primary/20 object-cover'
-      />
-      <section class='flex flex-col gap-1'>
-        <p class='font-bold'>No Country</p>
-        <p class='text-sm'>Jobs Simulation platform</p>
-      </section>
-    </header>
-    <ul class='flex flex-col gap-2 divide-y divide-border'>
-      {
-        experiences.map((exp) => (
-          <li class='flex flex-wrap items-center justify-between py-2'>
-            <section class='flex flex-col gap-1'>
-              <p class='font-semibold'>{exp.project}</p>
-              <p class='text-sm text-secondary'>{exp.role}</p>
+  <ul class='flex flex-col'>
+    {
+      experiences.map((experience) => (
+        <section class='group ml-4 flex flex-col gap-6 rounded-r-lg border-l border-dashed border-muted py-2 pl-4 pr-2 transition hover:bg-border/50'>
+          <header class='flex -translate-x-7 items-center gap-2 transition group-hover:-translate-x-9'>
+            <img
+              src={experience.image}
+              class='size-6 rounded-3xl border border-primary/20 bg-background object-cover transition-all group-hover:size-10 group-hover:rounded-lg'
+            />
+            <section class='relative flex -translate-x-8 flex-col gap-1 rounded-lg border border-primary/20 bg-background px-3 py-1 opacity-0 blur-sm transition group-hover:translate-x-0 group-hover:opacity-100 group-hover:blur-0'>
+              <div class='absolute left-[-4px] top-[40%] size-2 rounded-xl border border-green-300 bg-green-700' />
+              <p class='text-sm font-bold'>{experience.company}</p>
+              <p class='text-xs text-secondary'>{experience.description}</p>
             </section>
-            <section class='flex gap-1 text-xs'>
-              <p>{exp.since} -</p>
-              <p>{exp.until}</p>
-            </section>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-  <footer class='flex gap-2 *:flex-1'>
+          </header>
+          <ul class='flex flex-col gap-2 divide-y divide-border last:pb-6'>
+            {experience.jobs.map((exp) => (
+              <li class='flex flex-wrap items-center justify-between gap-3 py-2'>
+                <section class='flex flex-col gap-1'>
+                  <p class='font-semibold'>{exp.project}</p>
+                  <p class='text-sm text-secondary'>{exp.role}</p>
+                </section>
+                <section class='flex gap-1 text-xs'>
+                  <p>{exp.since} -</p>
+                  <p>{exp.until}</p>
+                </section>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </ul>
+  <footer class='flex flex-wrap gap-2 *:flex-1'>
     <button
-      class='flex items-center justify-center gap-2 rounded-lg border border-border py-2 text-sm font-semibold transition hover:bg-muted'
+      class='flex min-w-fit items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-semibold transition hover:bg-muted'
     >
       <img src='/svg/cv.svg' class='size-4' />
       Download cv</button
     >
     <button
-      class='flex items-center justify-center gap-2 rounded-lg border border-border py-2 text-sm font-semibold transition hover:bg-muted'
+      class='flex min-w-fit items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-semibold transition hover:bg-muted'
     >
       <img src='/svg/download.svg' class='size-4' />
       Read cv</button
     >
   </footer>
 </section>
+
+<script>
+  import { animate, inView } from 'motion'
+
+  animate('.experience-section', {
+    opacity: 0
+  })
+
+  inView(
+    '.experience-section',
+    (item) => {
+      animate(
+        item.target,
+        {
+          y: [100, 0],
+          opacity: [0, 1]
+        },
+        {
+          type: 'spring',
+          duration: 1
+        }
+      )
+    },
+    {
+      margin: '-200px'
+    }
+  )
+</script>

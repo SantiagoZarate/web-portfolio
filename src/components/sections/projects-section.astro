@@ -16,7 +16,7 @@ import Card from '../Card.astro'
       Projects
     </h3>
   </header>
-  <ul class='grid grid-cols-2 gap-2'>
+  <ul class='grid grid-cols-[repeat(auto-fit,minmax(min(100%,18em),1fr))] gap-2'>
     {projects.map((project) => <Card {...project} />)}
   </ul>
 </section>
