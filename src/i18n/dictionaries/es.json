@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "title": "Sobre Mi",
+    "greet": "Hola!",
+    "description": "Soy <span class='font-semibold text-primary'>Santiago Zárate</span>, un desarrollador web fullstack de Argentina apasionado por crear interfaces de usuario intuitivas y crear animaciones fluidas y sutiles para mejorar las experiencias de los usuarios."
+  },
+  "header": {
+    "role": "Desarrollador Fullstack"
+  },
+  "experience": [
+    {
+      "company": "No Country",
+      "description": "Plataforma de simulación de empleos",
+      "image": "/images/no-country.png",
+      "jobs": [
+        {
+          "role": "Desarrollador web front-end",
+          "contract": "Contrato de prácticas",
+          "project": "Hackathon - Plataforma de cursos",
+          "since": "Nov 2024",
+          "until": "Dic 2024"
+        },
+        {
+          "role": "Desarrollador de back-end",
+          "contract": "Contrato de prácticas",
+          "project": "Red social para desarrolladores",
+          "since": "Sep 2024",
+          "until": "Oct 2024"
+        },
+        {
+          "role": "Desarrollador web front-end",
+          "contract": "Contrato de prácticas",
+          "project": "Sitio web de mascotas refugiadas",
+          "since": "Jul 2024",
+          "until": "Sep 2024"
+        }
+      ]
+    },
+    {
+      "company": "Freelance",
+      "description": "Servicios independientes peer-to-peer.",
+      "image": "/svg/freelance.svg",
+      "jobs": [
+        {
+          "role": "Desarrollador web front-end",
+          "contract": "Contrato de prácticas",
+          "project": "Hackathon - Plataforma de cursos",
+          "since": "Nov 2024",
+          "until": "Dic 2024"
+        }
+      ]
+    }
+  ],
+  "cv": {
+    "download": "Descargar cv",
+    "read": "Leer cv"
+  }
+}

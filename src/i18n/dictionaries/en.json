@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "title": "About Me",
+    "greet": "Hi!",
+    "description": "I’m <span class='font-semibold text-primary'>Santiago Zarate</span>, a fullstack web Developer from Argentina with a passion for building intuitive UIs, and creating smooth, subtle animations to enhance user experiences."
+  },
+  "header": {
+    "role": "Fullstack Developer"
+  },
+  "experience": [
+    {
+      "company": "No Country",
+      "description": "Jobs Simulation platform",
+      "image": "/images/no-country.png",
+      "jobs": [
+        {
+          "role": "Frontend Web Developer",
+          "contract": "Internship contract",
+          "project": "Hackathon - Courses platform",
+          "since": "Nov 2024",
+          "until": "Dec 2024"
+        },
+        {
+          "role": "Backend Developer",
+          "contract": "Internship contract",
+          "project": "Social Network for Developers",
+          "since": "Sep 2024",
+          "until": "Oct 2024"
+        },
+        {
+          "role": "Frontend Web Developer",
+          "contract": "Internship contract",
+          "project": "Pets Refugee website",
+          "since": "Jul 2024",
+          "until": "Sep 2024"
+        }
+      ]
+    },
+    {
+      "company": "Freelance",
+      "description": "Independent peer-to-peer services.",
+      "image": "/svg/freelance.svg",
+      "jobs": [
+        {
+          "role": "Frontend Web Developer",
+          "contract": "Internship contract",
+          "project": "Hackathon - Courses platform",
+          "since": "Nov 2024",
+          "until": "Dec 2024"
+        }
+      ]
+    }
+  ],
+  "cv": {
+    "download": "Download cv",
+    "read": "Read cv"
+  }
+}

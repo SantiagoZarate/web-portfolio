@@ -1,12 +1,16 @@
+---
+import { getI18n } from '@/i18n/getI18n'
+
+const a = Astro.currentLocale
+const i18n = getI18n(a)
+---
+
 <section class='flex flex-col gap-4'>
-  <h3 class='hero-child font-semibold'>About Me</h3>
+  <h3 class='hero-child font-semibold'>{i18n.hero.title}</h3>
   <section class='prose prose-invert w-full text-secondary'>
-    <p class='hero-child'>Hi! 👋</p>
+    <p class='hero-child'>{i18n.hero.greet} 👋</p>
     <p class='hero-child'>
-      I’m <span class='font-semibold text-primary'>Santiago Zarate</span>, a
-      fullstack web Developer from Argentina with a passion for building
-      intuitive UIs, and creating smooth, subtle animations to enhance user
-      experiences.
+      {i18n.hero.description}
     </p>
   </section>
 </section>
