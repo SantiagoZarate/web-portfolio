@@ -38,7 +38,7 @@ const lang = Astro.currentLocale
         class='relative rounded-lg px-4 py-2 transition hover:bg-muted'
         href={lang === 'es' ? '/' : '/es'}
       >
-        <img src='/svg/world.svg' class='size-6' />
+        <img src='/svg/world.svg' class='size-6' alt='language switcher' />
         <span
           class='absolute -bottom-0 -right-0 rounded-md border border-border bg-background px-1 text-xs'
         >
@@ -54,12 +54,14 @@ const lang = Astro.currentLocale
               class='group grid grid-cols-1'
             >
               <img
-                src='/svg/arrow-up-rigth.svg'
                 class='size-6 translate-y-2 opacity-0 transition [grid-area:1/-1] group-hover:translate-y-0 group-hover:opacity-100'
+                alt='arrow up rigth icon'
+                src='/svg/arrow-up-rigth.svg'
               />
               <img
-                src={social.icon}
                 class='size-6 transition [grid-area:1/-1] group-hover:-translate-y-2 group-hover:opacity-0'
+                alt={`${social.href} icon`}
+                src={social.icon}
               />
             </a>
           ))

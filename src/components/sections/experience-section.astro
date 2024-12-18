@@ -6,8 +6,8 @@ const { experience, cv } = getI18n(Astro.currentLocale)
 <section class='experience-section group/exp flex flex-col gap-4'>
   <header class='flex items-center [&>:first-child]:mr-2'>
     <img
-      src='/svg/briefcase.svg'
       class='size-6 translate-x-4 rounded-md border border-primary/20 bg-muted p-1 text-white opacity-0 transition group-hover/exp:translate-x-0 group-hover/exp:opacity-100'
+      src='/svg/briefcase.svg'
       alt='projects icon'
     />
     <h3
@@ -16,14 +16,15 @@ const { experience, cv } = getI18n(Astro.currentLocale)
       Experience
     </h3>
   </header>
-  <ul class='flex flex-col'>
+  <article class='flex flex-col'>
     {
       experience.map((exp) => (
         <section class='group ml-4 flex flex-col gap-6 rounded-r-lg border-l border-dashed border-muted py-2 pl-4 pr-2 transition hover:bg-border/50'>
           <header class='flex -translate-x-7 items-center gap-2 transition group-hover:-translate-x-9'>
             <img
-              src={exp.image}
               class='size-6 rounded-3xl border border-primary/20 bg-background object-cover transition-all group-hover:size-10 group-hover:rounded-lg'
+              alt={exp.company + ' logo'}
+              src={exp.image}
             />
             <section class='relative flex flex-col gap-1 rounded-lg border border-primary/20 bg-background px-3 py-1 transition group-hover:translate-x-0 group-hover:opacity-100 group-hover:blur-0 tablet:-translate-x-8 tablet:opacity-0 tablet:blur-sm'>
               <div class='absolute left-[-4px] top-[40%] size-2 rounded-xl border border-green-300 bg-green-700' />
@@ -48,18 +49,18 @@ const { experience, cv } = getI18n(Astro.currentLocale)
         </section>
       ))
     }
-  </ul>
+  </article>
   <footer class='flex flex-wrap gap-2 *:flex-1'>
     <button
       class='flex min-w-fit items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-semibold transition hover:bg-muted'
     >
-      <img src='/svg/cv.svg' class='size-4' />
+      <img alt='download cv icon' src='/svg/cv.svg' class='size-4' />
       {cv.download}</button
     >
     <button
       class='flex min-w-fit items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-semibold transition hover:bg-muted'
     >
-      <img src='/svg/download.svg' class='size-4' />
+      <img alt='read cv icon' src='/svg/download.svg' class='size-4' />
       {cv.read}</button
     >
   </footer>

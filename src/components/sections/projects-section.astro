@@ -6,8 +6,8 @@ import Card from '../Card.astro'
 <section class='group flex flex-col gap-4'>
   <header class='flex items-center [&>:first-child]:mr-2'>
     <img
-      src='/svg/cube.svg'
       class='size-6 translate-x-4 rounded-md border border-primary/20 bg-muted p-1 text-white opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100'
+      src='/svg/cube.svg'
       alt='projects icon'
     />
     <h3
@@ -16,7 +16,9 @@ import Card from '../Card.astro'
       Projects
     </h3>
   </header>
-  <ul class='grid grid-cols-[repeat(auto-fit,minmax(min(100%,18em),1fr))] gap-2'>
+  <ul
+    class='grid grid-cols-[repeat(auto-fit,minmax(min(100%,18em),1fr))] gap-2'
+  >
     {projects.map((project) => <Card {...project} />)}
   </ul>
 </section>
