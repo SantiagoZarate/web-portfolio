@@ -2,19 +2,70 @@
   {
     "title": "Lucky Pick",
     "description": "descripcion corta",
-    "stack": ["react", "trpc", "express"],
+    "stack": [
+      {
+        "name": "React",
+        "icon": "/svg/react.svg"
+      },
+      {
+        "name": "tRPC",
+        "icon": "/svg/trpc.svg"
+      },
+      {
+        "name": "Express",
+        "icon": "/svg/express.svg"
+      }
+    ],
     "href": "https://lucky-pick.com"
   },
   {
     "title": "Lucky Pick",
     "description": "descripcion corta",
-    "stack": ["react", "trpc", "express"],
+    "stack": [
+      {
+        "name": "React",
+        "icon": "/svg/react.svg"
+      },
+      {
+        "name": "tRPC",
+        "icon": "/svg/trpc.svg"
+      },
+      {
+        "name": "Express",
+        "icon": "/svg/express.svg"
+      }
+    ],
     "href": "https://lucky-pick.com"
   },
   {
     "title": "Lucky Pick",
     "description": "descripcion corta",
-    "stack": ["react", "trpc", "express"],
+    "stack": [
+      {
+        "name": "React",
+        "icon": "/svg/react.svg"
+      },
+      {
+        "name": "tRPC",
+        "icon": "/svg/trpc.svg"
+      },
+      {
+        "name": "Express",
+        "icon": "/svg/express.svg"
+      },
+      {
+        "name": "Drizzle",
+        "icon": "/svg/drizzle.svg"
+      },
+      {
+        "name": "Nextjs",
+        "icon": "/svg/nextjs.svg"
+      },
+      {
+        "name": "Tailwind",
+        "icon": "/svg/tailwind.svg"
+      }
+    ],
     "href": "https://lucky-pick.com"
   }
 ]
