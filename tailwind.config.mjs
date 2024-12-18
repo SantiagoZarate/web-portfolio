@@ -16,7 +16,7 @@ export default {
         inter: ["Inter", "sans-serif"],
       },
       screens: {
-        tablet: "805px",
+        tablet: "640px",
       },
     },
   },

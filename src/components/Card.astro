@@ -10,9 +10,9 @@ const { href, title, description, stack } = Astro.props;
 ---
 
 <li
-  class="border border-border rounded-lg group bg-background hover:bg-primary/5"
+  class="border border-border rounded-lg group bg-background hover:bg-primary/5 transition"
 >
-  <a href={href} class="flex flex-col gap-2 p-4">
+  <a href={href} class="flex flex-col gap-2 p-2">
     <header class="flex gap-1 items-center">
       <h2>
         {title}
