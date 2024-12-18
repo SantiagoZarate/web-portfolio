@@ -1,6 +1,7 @@
 ---
-const lang = Astro.currentLocale
+import socials from '@/data/socials.json'
 import './header.css'
+const lang = Astro.currentLocale
 ---
 
 <header class='header fixed left-0 top-0 w-full px-6 pb-4 pt-12'>
@@ -45,7 +46,24 @@ import './header.css'
         </span>
       </a>
       <nav class='flex gap-2'>
-        <a href=''>twitter</a>
+        {
+          socials.map((social) => (
+            <a
+              target='_blank'
+              href={social.href}
+              class='group grid grid-cols-1'
+            >
+              <img
+                src='/svg/arrow-up-rigth.svg'
+                class='size-6 translate-y-2 opacity-0 transition [grid-area:1/-1] group-hover:translate-y-0 group-hover:opacity-100'
+              />
+              <img
+                src={social.icon}
+                class='size-6 transition [grid-area:1/-1] group-hover:-translate-y-2 group-hover:opacity-0'
+              />
+            </a>
+          ))
+        }
       </nav>
     </section>
   </div>
