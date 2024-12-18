@@ -2,14 +2,16 @@
 import './header.css'
 ---
 
-<header class='header w-full fixed left-0 top-0 pb-4 pt-12 px-6'>
-  <div class="max-w-screen-tablet mx-auto flex justify-between gap-6 items-center">
+<header class='header fixed left-0 top-0 w-full px-6 pb-4 pt-12'>
+  <div
+    class='mx-auto flex max-w-screen-tablet items-center justify-between gap-6'
+  >
     <section class='flex items-center gap-2'>
-      <figure class='h-10 w-10 overflow-hidden rounded-full'>
+      <figure class='pfp size-14 overflow-hidden rounded-full'>
         <img
-        class='h-full w-full bg-red-300 object-cover'
-        src='./images/yo.webp'
-        alt=''
+          class='h-full w-full bg-background object-cover'
+          src='./images/yo.webp'
+          alt='Santiago zarate profile picture'
         />
       </figure>
       <section class='flex flex-col gap-1'>
@@ -17,8 +19,8 @@ import './header.css'
         <p class='text-secondary'>Fullstack Developer</p>
       </section>
     </section>
-    <nav class="flex gap-2">
-      <a href="">twitter</a>
+    <nav class='flex gap-2'>
+      <a href=''>twitter</a>
     </nav>
   </div>
 </header>
