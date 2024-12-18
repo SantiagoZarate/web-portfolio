@@ -64,6 +64,10 @@
       {
         "name": "Tailwind",
         "icon": "/svg/tailwind.svg"
+      },
+      {
+        "name": "Redux",
+        "icon": "/svg/redux.svg"
       }
     ],
     "href": "https://lucky-pick.com"
