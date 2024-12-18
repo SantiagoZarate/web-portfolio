@@ -19,9 +19,9 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <body class='px-6'>
-    <section class='relative mx-auto max-w-screen-tablet pb-20 pt-36'>
-      <Header />
+    <Header />
+    <main class='relative mx-auto max-w-screen-tablet pb-20 pt-36'>
       <slot />
-    </section>
+    </main>
   </body>
 </html>

@@ -1,15 +1,24 @@
-<header class='fixed top-0 pb-4 pt-12'>
-  <section class='flex items-center gap-2'>
-    <figure class='h-10 w-10 overflow-hidden rounded-full'>
-      <img
+---
+import './header.css'
+---
+
+<header class='header w-full fixed left-0 top-0 pb-4 pt-12 '>
+  <div class="max-w-screen-tablet mx-auto flex justify-between gap-6 items-center">
+    <section class='flex items-center gap-2'>
+      <figure class='h-10 w-10 overflow-hidden rounded-full'>
+        <img
         class='h-full w-full bg-red-300 object-cover'
         src='./images/yo.webp'
         alt=''
-      />
-    </figure>
-    <section class='flex flex-col gap-1'>
-      <h3>Santiago Zarate</h3>
-      <p class='text-secondary'>Fullstack Developer</p>
+        />
+      </figure>
+      <section class='flex flex-col gap-1'>
+        <h3>Santiago Zarate</h3>
+        <p class='text-secondary'>Fullstack Developer</p>
+      </section>
     </section>
-  </section>
+    <nav class="flex gap-2">
+      <a href="">twitter</a>
+    </nav>
+  </div>
 </header>

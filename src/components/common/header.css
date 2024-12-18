@@ -1,0 +1,15 @@
+.header {
+  backdrop-filter: blur(0px);
+  animation: blurHeader linear;
+  animation-timeline: scroll();
+  animation-range: 50px;
+  z-index: 100;
+  mask-image: linear-gradient(0deg,transparent 0%,black 20%);
+}
+
+@keyframes blurHeader {
+  to {
+    /* background-color: red; */
+    backdrop-filter: blur(10px);
+  }
+}
