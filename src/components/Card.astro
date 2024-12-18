@@ -28,7 +28,7 @@ const { href, title, description, stack } = Astro.props
     <ul class='flex flex-wrap gap-1'>
       {
         stack.map((item) => (
-          <li class='flex items-center gap-1 rounded-[4px] border border-secondary/15 bg-muted px-2 py-1 text-xs'>
+          <li class='flex items-center gap-1 rounded-[4px] border border-secondary/15 bg-muted px-[6px] py-1 text-xs'>
             <img src={item.icon} class='size-4' alt='' />
             {item.name}
           </li>

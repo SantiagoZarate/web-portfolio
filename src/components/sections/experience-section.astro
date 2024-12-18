@@ -25,7 +25,7 @@ const { experience, cv } = getI18n(Astro.currentLocale)
               src={exp.image}
               class='size-6 rounded-3xl border border-primary/20 bg-background object-cover transition-all group-hover:size-10 group-hover:rounded-lg'
             />
-            <section class='relative flex -translate-x-8 flex-col gap-1 rounded-lg border border-primary/20 bg-background px-3 py-1 opacity-0 blur-sm transition group-hover:translate-x-0 group-hover:opacity-100 group-hover:blur-0'>
+            <section class='relative flex flex-col gap-1 rounded-lg border border-primary/20 bg-background px-3 py-1 transition group-hover:translate-x-0 group-hover:opacity-100 group-hover:blur-0 tablet:-translate-x-8 tablet:opacity-0 tablet:blur-sm'>
               <div class='absolute left-[-4px] top-[40%] size-2 rounded-xl border border-green-300 bg-green-700' />
               <p class='text-sm font-bold'>{exp.company}</p>
               <p class='text-xs text-secondary'>{exp.description}</p>

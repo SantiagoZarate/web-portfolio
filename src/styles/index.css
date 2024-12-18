@@ -1,27 +1,47 @@
-@import url("./colors.css");
+@import url('./colors.css');
 
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-background text-primary font-inter;
+  @apply bg-background font-inter text-primary;
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url("./fonts/Inter-VariableFont_opsz,wght.ttf");
+  font-family: 'Inter';
+  src: url('./fonts/Inter-VariableFont_opsz,wght.ttf');
 }
 
 body::before {
   inset: 0;
   background-blend-mode: difference;
-  background-image: url("../../images/pattern.svg");
+  background-image: url('../../images/pattern.svg');
   background-position-x: 40%;
   background-position-y: top;
   background-repeat: no-repeat;
-  content: "";
+  content: '';
   inset: 0;
   opacity: 0.4;
   position: absolute;
   pointer-events: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #a5a5a5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3f3f3f;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
