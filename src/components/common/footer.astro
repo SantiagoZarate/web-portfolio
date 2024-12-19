@@ -1,0 +1,29 @@
+---
+import socials from '@/data/socials.json'
+---
+
+<footer
+  class='mt-20 flex flex-wrap justify-between gap-4 border-t border-border pb-12 pt-6'
+>
+  <section>
+    <p class='text-xs'>Powered by Astro</p>
+  </section>
+  <section class='flex gap-6'>
+    <article class='flex flex-col gap-4'>
+      <p class='text-sm font-semibold'>Connect</p>
+      <nav class='flex flex-col'>
+        {
+          socials.map((social) => (
+            <a
+              class='py-2 text-xs text-secondary transition hover:text-primary'
+              href={social.href}
+              target='_blank'
+            >
+              {social.name}
+            </a>
+          ))
+        }
+      </nav>
+    </article>
+  </section>
+</footer>
