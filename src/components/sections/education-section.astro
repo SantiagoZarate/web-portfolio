@@ -1,0 +1,108 @@
+---
+import { getI18n } from '@/i18n/getI18n'
+import './education-timeline.css'
+const i18n = getI18n(Astro.currentLocale)
+console.dir(i18n.education)
+---
+
+<section class='group flex flex-col gap-4'>
+  <header class='flex items-center [&>:first-child]:mr-2'>
+    <img
+      class='size-6 translate-x-4 rounded-md border border-primary/20 bg-muted p-1 text-white opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100'
+      src='/svg/academic-cap.svg'
+      alt='academic cap icon'
+    />
+    <h3
+      class='-translate-x-8 font-semibold transition group-hover:translate-x-0'
+    >
+      Academics
+    </h3>
+  </header>
+  <header class='flex items-center gap-2'>
+    <img
+      src='/images/ungs.jpeg'
+      class='size-10 rounded-lg border border-primary/10 object-cover'
+      alt='ungs logo'
+    />
+    <section class='flex flex-col gap-1'>
+      <p class='font-semibold'>Universidad Nacional de General Sarmiento</p>
+      <footer
+        class='flex items-baseline divide-x divide-muted [&>:first-child]:pr-2 [&>:last-child]:pl-2'
+      >
+        <p class='text-sm text-secondary'>
+          Tecnicatura universitaria en informática
+        </p>
+        <p class='text-xs'>20/24 approved courses</p>
+      </footer>
+    </section>
+  </header>
+  <section class='flex flex-col gap-6'>
+    <header class='flex flex-wrap items-center justify-between'>
+      <p class='text-sm font-semibold'>Latest courses</p>
+      <aside class='flex items-center gap-2 text-xs'>
+        <div
+          class='flex items-center gap-1 rounded-lg border border-border px-2 py-1'
+        >
+          <span class='size-2 rounded-full bg-green-400'> </span>
+          <p>Done</p>
+        </div>
+        <div
+          class='flex items-center gap-1 rounded-lg border border-border px-2 py-1'
+        >
+          <span class='size-2 rounded-full bg-gray-500'> </span>
+          <p>Next Up</p>
+        </div>
+      </aside>
+    </header>
+    <article class='timeline relative overflow-hidden *:aspect-square'>
+      <div class='timeline-line border-l border-t border-dashed border-muted'>
+      </div>
+      {
+        i18n.education.courses.map((course) => (
+          <div
+            data-done={course.done}
+            class='course relative bottom-0 flex flex-col justify-center gap-1'
+          >
+            <p class='text-center text-xs font-semibold'>{course.name}</p>
+            <ul class='flex flex-wrap place-content-center gap-1 px-6 text-secondary'>
+              {course.skills.map((skill) => (
+                <li class='rounded-md border border-border p-1 text-[10px]'>
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </article>
+  </section>
+</section>
+
+<script>
+  import { animate, inView, stagger } from 'motion'
+
+  animate('.course', {
+    opacity: 0
+  })
+
+  inView(
+    '.course',
+    (item) => {
+      animate(
+        item.target,
+        {
+          opacity: [0, 1],
+          filter: ['blur(10px)', 'blur(0px)']
+        },
+        {
+          type: 'spring',
+          duration: 2,
+          delay: stagger(0.2)
+        }
+      )
+    },
+    {
+      margin: '0px 0px -200px 0px'
+    }
+  )
+</script>

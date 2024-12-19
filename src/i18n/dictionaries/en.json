@@ -54,5 +54,34 @@
   "cv": {
     "download": "Download cv",
     "read": "Read cv"
+  },
+  "education": {
+    "courses": [
+      {
+        "name": "OS & Network",
+        "skills": ["Linux", "Bash", "OSI"],
+        "done": "true"
+      },
+      {
+        "name": "Database",
+        "skills": ["SQL", "Postgres", "Go"],
+        "done": "true"
+      },
+      {
+        "name": "Software Specification",
+        "skills": ["Requirements", "Diagrams", "Design"],
+        "done": "true"
+      },
+      {
+        "name": "Software Engineering",
+        "skills": ["Use cases", "UML", "Architecture"],
+        "done": "true"
+      },
+      {
+        "name": "Software Laboratory",
+        "skills": ["?"],
+        "done": "false"
+      }
+    ]
   }
 }
