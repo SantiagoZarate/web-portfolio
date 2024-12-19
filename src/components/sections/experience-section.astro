@@ -3,7 +3,7 @@ import { getI18n } from '@/i18n/getI18n'
 const { experience, cv } = getI18n(Astro.currentLocale)
 ---
 
-<section class='experience-section group/exp flex flex-col gap-4'>
+<section class='experience-section group/exp flex flex-col gap-4 opacity-0'>
   <header class='flex items-center [&>:first-child]:mr-2'>
     <img
       class='size-6 translate-x-4 rounded-md border border-primary/20 bg-muted p-1 text-white opacity-0 transition group-hover/exp:translate-x-0 group-hover/exp:opacity-100'
@@ -69,9 +69,9 @@ const { experience, cv } = getI18n(Astro.currentLocale)
 <script>
   import { animate, inView, stagger } from 'motion'
 
-  animate('.experience-section', {
-    opacity: 0
-  })
+  // animate('.experience-section', {
+  //   opacity: 0
+  // })
 
   inView(
     '.experience-section',
@@ -90,7 +90,7 @@ const { experience, cv } = getI18n(Astro.currentLocale)
       animate(
         '.experience-project',
         {
-          x: [100, 0],
+          y: [100, 0],
           opacity: [0, 1],
           filter: ['blur(10px)', 'blur(0px)']
         },
@@ -102,7 +102,7 @@ const { experience, cv } = getI18n(Astro.currentLocale)
       )
     },
     {
-      margin: '-200px'
+      margin: '-150px'
     }
   )
 </script>
