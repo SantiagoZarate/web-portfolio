@@ -1,5 +1,6 @@
 {
   "education": {
+    "title": "Education",
     "carreer": "University Degree in Computer Science (Technical Program)",
     "approved": "18/21 Approved courses",
     "latest": "Latest Courses",
@@ -41,52 +42,58 @@
   "header": {
     "role": "Fullstack Developer"
   },
-  "experience": [
-    {
-      "company": "No Country",
-      "description": "Jobs Simulation platform",
-      "image": "/images/no-country.png",
-      "jobs": [
-        {
-          "role": "Frontend Web Developer",
-          "contract": "Internship contract",
-          "project": "Hackathon - Courses platform",
-          "since": "Nov 2024",
-          "until": "Dec 2024"
-        },
-        {
-          "role": "Backend Developer",
-          "contract": "Internship contract",
-          "project": "Social Network for Developers",
-          "since": "Sep 2024",
-          "until": "Oct 2024"
-        },
-        {
-          "role": "Frontend Web Developer",
-          "contract": "Internship contract",
-          "project": "Pets Refugee website",
-          "since": "Jul 2024",
-          "until": "Sep 2024"
-        }
-      ]
-    },
-    {
-      "company": "Freelance",
-      "description": "Independent peer-to-peer services.",
-      "image": "/svg/freelance.svg",
-      "jobs": [
-        {
-          "role": "Frontend Web Developer",
-          "contract": "Internship contract",
-          "project": "Hackathon - Courses platform",
-          "since": "Nov 2024",
-          "until": "Dec 2024"
-        }
-      ]
-    }
-  ],
+  "experience": {
+    "title": "Education",
+    "jobs": [
+      {
+        "company": "No Country",
+        "description": "Jobs Simulation platform",
+        "image": "/images/no-country.png",
+        "jobs": [
+          {
+            "role": "Frontend Web Developer",
+            "contract": "Internship contract",
+            "project": "Hackathon - Courses platform",
+            "since": "Nov 2024",
+            "until": "Dec 2024"
+          },
+          {
+            "role": "Backend Developer",
+            "contract": "Internship contract",
+            "project": "Social Network for Developers",
+            "since": "Sep 2024",
+            "until": "Oct 2024"
+          },
+          {
+            "role": "Frontend Web Developer",
+            "contract": "Internship contract",
+            "project": "Pets Refugee website",
+            "since": "Jul 2024",
+            "until": "Sep 2024"
+          }
+        ]
+      },
+      {
+        "company": "Freelance",
+        "description": "Independent peer-to-peer services.",
+        "image": "/svg/freelance.svg",
+        "jobs": [
+          {
+            "role": "Frontend Web Developer",
+            "contract": "Internship contract",
+            "project": "Hackathon - Courses platform",
+            "since": "Nov 2024",
+            "until": "Dec 2024"
+          }
+        ]
+      }
+    ]
+  },
   "cv": {
     "download": "Download cv",
     "read": "Read cv"
+  },
+  "projects": {
+    "title": "Projects"
   }
 }

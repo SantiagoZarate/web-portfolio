@@ -1,6 +1,8 @@
 ---
 import projects from '../../data/projects.json'
 import Card from '../Card.astro'
+import { getI18n } from '@/i18n/getI18n'
+const i18n = getI18n(Astro.currentLocale)
 ---
 
 <section class='group flex flex-col gap-4'>
@@ -13,7 +15,7 @@ import Card from '../Card.astro'
     <h3
       class='-translate-x-8 font-semibold transition group-hover:translate-x-0'
     >
-      Projects
+      {i18n.projects.title}
     </h3>
   </header>
   <ul

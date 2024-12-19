@@ -13,12 +13,12 @@ const { experience, cv } = getI18n(Astro.currentLocale)
     <h3
       class='-translate-x-8 font-semibold transition group-hover/exp:translate-x-0'
     >
-      Experience
+      {experience.title}
     </h3>
   </header>
   <article class='flex flex-col'>
     {
-      experience.map((exp) => (
+      experience.jobs.map((exp) => (
         <section class='group ml-4 flex flex-col gap-6 rounded-r-lg border-l border-dashed border-muted py-2 pl-4 pr-2 transition hover:bg-border/50'>
           <header class='flex -translate-x-7 items-center gap-2 transition group-hover:-translate-x-9'>
             <img

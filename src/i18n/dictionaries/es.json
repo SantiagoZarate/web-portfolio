@@ -1,5 +1,6 @@
 {
   "education": {
+    "title": "Educación",
     "carreer": "Tecnicatura universitaria en informática",
     "approved": "18/21 materias aprobadas",
     "latest": "ultimas materias",
@@ -41,52 +42,58 @@
   "header": {
     "role": "Desarrollador Fullstack"
   },
-  "experience": [
-    {
-      "company": "No Country",
-      "description": "Plataforma de simulación de empleos",
-      "image": "/images/no-country.png",
-      "jobs": [
-        {
-          "role": "Desarrollador web front-end",
-          "contract": "Contrato de prácticas",
-          "project": "Hackathon - Plataforma de cursos",
-          "since": "Nov 2024",
-          "until": "Dic 2024"
-        },
-        {
-          "role": "Desarrollador de back-end",
-          "contract": "Contrato de prácticas",
-          "project": "Red social para desarrolladores",
-          "since": "Sep 2024",
-          "until": "Oct 2024"
-        },
-        {
-          "role": "Desarrollador web front-end",
-          "contract": "Contrato de prácticas",
-          "project": "Sitio web de mascotas refugiadas",
-          "since": "Jul 2024",
-          "until": "Sep 2024"
-        }
-      ]
-    },
-    {
-      "company": "Freelance",
-      "description": "Servicios independientes peer-to-peer.",
-      "image": "/svg/freelance.svg",
-      "jobs": [
-        {
-          "role": "Desarrollador web front-end",
-          "contract": "Contrato de prácticas",
-          "project": "Hackathon - Plataforma de cursos",
-          "since": "Nov 2024",
-          "until": "Dic 2024"
-        }
-      ]
-    }
-  ],
+  "experience": {
+    "title": "Experiencia",
+    "jobs": [
+      {
+        "company": "No Country",
+        "description": "Plataforma de simulación de empleos",
+        "image": "/images/no-country.png",
+        "jobs": [
+          {
+            "role": "Desarrollador web front-end",
+            "contract": "Contrato de prácticas",
+            "project": "Hackathon - Plataforma de cursos",
+            "since": "Nov 2024",
+            "until": "Dic 2024"
+          },
+          {
+            "role": "Desarrollador de back-end",
+            "contract": "Contrato de prácticas",
+            "project": "Red social para desarrolladores",
+            "since": "Sep 2024",
+            "until": "Oct 2024"
+          },
+          {
+            "role": "Desarrollador web front-end",
+            "contract": "Contrato de prácticas",
+            "project": "Sitio web de mascotas refugiadas",
+            "since": "Jul 2024",
+            "until": "Sep 2024"
+          }
+        ]
+      },
+      {
+        "company": "Freelance",
+        "description": "Servicios independientes peer-to-peer.",
+        "image": "/svg/freelance.svg",
+        "jobs": [
+          {
+            "role": "Desarrollador web front-end",
+            "contract": "Contrato de prácticas",
+            "project": "Hackathon - Plataforma de cursos",
+            "since": "Nov 2024",
+            "until": "Dic 2024"
+          }
+        ]
+      }
+    ]
+  },
   "cv": {
     "download": "Descargar cv",
     "read": "Leer cv"
+  },
+  "projects": {
+    "title": "Proyectos"
   }
 }
