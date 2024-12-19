@@ -2,7 +2,7 @@
   "hero": {
     "title": "Sobre Mi",
     "greet": "Hola!",
-    "description": "Soy <span class='font-semibold text-primary'>Santiago Zárate</span>, un desarrollador web fullstack de Argentina apasionado por crear interfaces de usuario intuitivas y crear animaciones fluidas y sutiles para mejorar las experiencias de los usuarios."
+    "description": "Soy <span class='font-semibold text-white'>Santiago Zárate</span>, un desarrollador web fullstack de Argentina apasionado por crear interfaces de usuario intuitivas y crear animaciones fluidas y sutiles para mejorar las experiencias de los usuarios."
   },
   "header": {
     "role": "Desarrollador Fullstack"

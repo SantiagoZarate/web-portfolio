@@ -13,7 +13,7 @@
 .timeline-line {
   position: absolute;
   inset: 0;
-  z-index: 50;
+  z-index: 10;
   mask-image: linear-gradient(
     90deg,
     transparent,
@@ -30,6 +30,7 @@
   content: '';
   border-radius: 9999px;
   background-color: gray;
+  border: 1px solid rgb(184, 184, 184);
   position: absolute;
   inset: 0;
   margin-left: auto;
@@ -38,11 +39,6 @@
   height: 0.5em;
   width: 0.5em;
   z-index: 100;
-}
-
-.course[data-done='true']::before {
-  background-color: green;
-  border: 1px solid rgb(7, 219, 7);
 }
 
 .course:nth-child(odd) {
