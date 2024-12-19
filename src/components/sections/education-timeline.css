@@ -69,7 +69,7 @@
 
 .course:nth-child(odd)::before {
   transform: translateY(100%);
-  margin-top: -8%;
+  margin-top: -9%;
 }
 
 @media (max-width: 640px) {

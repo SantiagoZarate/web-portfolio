@@ -1,4 +1,38 @@
 {
+  "education": {
+    "carreer": "Tecnicatura universitaria en informática",
+    "approved": "18/21 materias aprobadas",
+    "latest": "ultimas materias",
+    "done": "aprobada",
+    "next": "por cursar",
+    "courses": [
+      {
+        "name": "Sist. operativos y Redes",
+        "skills": ["Linux", "Bash", "OSI"],
+        "done": "true"
+      },
+      {
+        "name": "Base de Datos",
+        "skills": ["SQL", "Postgres", "Go"],
+        "done": "true"
+      },
+      {
+        "name": "Especificación de Software",
+        "skills": ["Requerimientos", "Diagramas", "Diseño"],
+        "done": "true"
+      },
+      {
+        "name": "Ingeniería de Software",
+        "skills": ["Casos de Uso", "UML", "Arquitectura"],
+        "done": "true"
+      },
+      {
+        "name": "Laboratorio de Software",
+        "skills": ["?"],
+        "done": "false"
+      }
+    ]
+  },
   "hero": {
     "title": "Sobre Mi",
     "greet": "Hola!",
@@ -54,34 +88,5 @@
   "cv": {
     "download": "Descargar cv",
     "read": "Leer cv"
-  },
-  "education": {
-    "courses": [
-      {
-        "name": "Sist. operativos y Redes",
-        "skills": ["Linux", "Bash", "OSI"],
-        "done": "true"
-      },
-      {
-        "name": "Base de Datos",
-        "skills": ["SQL", "Postgres", "Go"],
-        "done": "true"
-      },
-      {
-        "name": "Especificación de Software",
-        "skills": ["Requerimientos", "Diagramas", "Diseño"],
-        "done": "true"
-      },
-      {
-        "name": "Ingeniería de Software",
-        "skills": ["Casos de Uso", "UML", "Arquitectura"],
-        "done": "true"
-      },
-      {
-        "name": "Laboratorio de Software",
-        "skills": ["?"],
-        "done": "false"
-      }
-    ]
   }
 }

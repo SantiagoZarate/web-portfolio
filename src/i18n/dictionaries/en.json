@@ -1,4 +1,38 @@
 {
+  "education": {
+    "carreer": "University Degree in Computer Science (Technical Program)",
+    "approved": "18/21 Approved courses",
+    "latest": "Latest Courses",
+    "done": "done",
+    "next": "next up",
+    "courses": [
+      {
+        "name": "OS & Network",
+        "skills": ["Linux", "Bash", "OSI"],
+        "done": "true"
+      },
+      {
+        "name": "Database",
+        "skills": ["SQL", "Postgres", "Go"],
+        "done": "true"
+      },
+      {
+        "name": "Software Specification",
+        "skills": ["Requirements", "Diagrams", "Design"],
+        "done": "true"
+      },
+      {
+        "name": "Software Engineering",
+        "skills": ["Use cases", "UML", "Architecture"],
+        "done": "true"
+      },
+      {
+        "name": "Software Laboratory",
+        "skills": ["?"],
+        "done": "false"
+      }
+    ]
+  },
   "hero": {
     "title": "About Me",
     "greet": "Hi!",
@@ -54,34 +88,5 @@
   "cv": {
     "download": "Download cv",
     "read": "Read cv"
-  },
-  "education": {
-    "courses": [
-      {
-        "name": "OS & Network",
-        "skills": ["Linux", "Bash", "OSI"],
-        "done": "true"
-      },
-      {
-        "name": "Database",
-        "skills": ["SQL", "Postgres", "Go"],
-        "done": "true"
-      },
-      {
-        "name": "Software Specification",
-        "skills": ["Requirements", "Diagrams", "Design"],
-        "done": "true"
-      },
-      {
-        "name": "Software Engineering",
-        "skills": ["Use cases", "UML", "Architecture"],
-        "done": "true"
-      },
-      {
-        "name": "Software Laboratory",
-        "skills": ["?"],
-        "done": "false"
-      }
-    ]
   }
 }

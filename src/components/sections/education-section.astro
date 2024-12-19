@@ -30,15 +30,15 @@ console.dir(i18n.education)
         class='flex flex-wrap items-baseline divide-muted *:flex-1 sm:divide-x sm:[&>:first-child]:pr-2 sm:[&>:last-child]:pl-2'
       >
         <p class='min-w-fit text-sm text-secondary'>
-          Tecnicatura universitaria en informática
+          {i18n.education.carreer}
         </p>
-        <p class='min-w-fit text-xs'>18/21 approved courses</p>
+        <p class='min-w-fit text-xs'>{i18n.education.approved}</p>
       </footer>
     </section>
   </header>
   <section class='flex flex-col gap-6'>
     <header class='flex flex-wrap items-center justify-between'>
-      <p class='text-sm font-semibold'>Latest courses</p>
+      <p class='text-sm font-semibold'>{i18n.education.latest}</p>
       <aside class='flex items-center gap-2 text-xs'>
         <div
           class='flex items-center gap-1 rounded-lg border border-border px-2 py-1'
@@ -59,6 +59,10 @@ console.dir(i18n.education)
       </aside>
     </header>
     <article class='timeline relative overflow-hidden *:aspect-square'>
+      <div
+        class='absolute inset-0 h-full w-full bg-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(50%_50%,black,transparent)]'
+      >
+      </div>
       <div class='timeline-line border-l border-t border-dashed border-muted'>
       </div>
       {
