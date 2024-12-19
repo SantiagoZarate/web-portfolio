@@ -9,7 +9,7 @@ const lang = Astro.currentLocale
     class='mx-auto flex max-w-screen-tablet items-center justify-between gap-6'
   >
     <section class='flex items-center gap-2'>
-      <figure class='pfp size-14 overflow-hidden rounded-full'>
+      <figure class='pfp size-14 min-w-fit overflow-hidden rounded-full'>
         <img
           class='h-full w-full bg-background object-cover'
           src='./images/yo.webp'
@@ -18,10 +18,10 @@ const lang = Astro.currentLocale
       </figure>
       <section class='flex flex-col gap-1'>
         <header
-          class='flex items-center divide-x divide-muted [&>:first-child]:pr-2 [&>:last-child]:pl-2'
+          class='flex flex-wrap items-center divide-muted *:flex-1 sm:divide-x sm:[&>:first-child]:pr-2 sm:[&>:last-child]:pl-2'
         >
-          <h3>Santiago Zarate</h3>
-          <p class='text-sm text-secondary'>Fullstack Developer</p>
+          <h3 class='min-w-fit'>Santiago Zarate</h3>
+          <p class='min-w-fit text-sm text-secondary'>Fullstack Developer</p>
         </header>
         <section class='flex items-center gap-2'>
           <div
