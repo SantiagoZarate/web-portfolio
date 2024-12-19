@@ -11,15 +11,7 @@ const i18n = getI18n(a)
     <p class='hero-child'>{i18n.hero.greet} 👋</p>
     <p class='hero-child' set:html={i18n.hero.description} />
   </section>
-  <span class='group relative'>
-    argentina
-    <div
-      class='absolute size-2 rounded-full bg-red-500 opacity-0 group-hover:opacity-100'
-    >
-    </div>
-  </span>
 </section>
-
 <script>
   import { animate, stagger } from 'motion'
 
