@@ -4,31 +4,38 @@
 
 .header {
   backdrop-filter: blur(0px);
-  animation: blurHeader linear forwards;
-  animation-timeline: scroll();
-  animation-range: 0 var(--scroll-range-end);
   z-index: 100;
-  mask-image: linear-gradient(0deg, transparent 0%, black 20%);
 }
 
 .pfp {
   background-color: red;
-  animation: resizeImage linear forwards;
-  animation-timeline: scroll();
-  animation-range: 0 var(--scroll-range-end);
 }
 
-@keyframes blurHeader {
-  to {
-    /* background-color: red; */
-    backdrop-filter: blur(10px);
-    padding-top: 1em;
+@supports (animation-timeline: scroll()) {
+  .header {
+    animation: blurHeader linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0 var(--scroll-range-end);
+    mask-image: linear-gradient(0deg, transparent 0%, black 20%);
   }
-}
 
-@keyframes resizeImage {
-  to {
-    width: 2.5em;
-    height: 2.5em;
+  .pfp {
+    animation: resizeImage linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0 var(--scroll-range-end);
+  }
+
+  @keyframes blurHeader {
+    to {
+      backdrop-filter: blur(10px);
+      padding-top: 1em;
+    }
+  }
+
+  @keyframes resizeImage {
+    to {
+      width: 2.5em;
+      height: 2.5em;
+    }
   }
 }
