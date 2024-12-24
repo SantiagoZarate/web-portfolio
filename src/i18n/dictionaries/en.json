@@ -134,7 +134,7 @@
             "icon": "/svg/tailwind.svg"
           }
         ],
-        "href": "https://lucky-pick.com"
+        "href": "https://asadito.vercel.app/"
       },
       {
         "title": "Book Tracker",
@@ -150,11 +150,11 @@
             "icon": "/svg/next-auth.svg"
           },
           {
-            "name": "Tailwind",
-            "icon": "/svg/tailwind.svg"
+            "name": "Shadcn",
+            "icon": "/svg/shadcn.svg"
           }
         ],
-        "href": "https://lucky-pick.com"
+        "href": "https://book-tracker-flame.vercel.app/es"
       },
       {
         "title": "Paren la Data",
@@ -170,11 +170,11 @@
             "icon": "/svg/drizzle.svg"
           },
           {
-            "name": "Tailwind",
-            "icon": "/svg/tailwind.svg"
+            "name": "SQL",
+            "icon": "/svg/database.svg"
           }
         ],
-        "href": "https://lucky-pick.com"
+        "href": "https://paren-la-data.vercel.app/"
       }
     ]
   }

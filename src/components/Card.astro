@@ -13,7 +13,7 @@ const { href, title, description, stack, icon } = Astro.props
 <li
   class='project-card group/card rounded-lg border border-border bg-background transition hover:bg-primary/5'
 >
-  <a href={href} class='flex flex-col gap-2 p-2'>
+  <a target='_blank' href={href} class='flex flex-col gap-2 p-2'>
     <header class='flex items-center gap-1'>
       <img src={icon} alt={`${title} icon`} class='size-6' />
       <h2 class='font-semibold'>
