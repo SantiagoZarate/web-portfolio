@@ -94,6 +94,28 @@
     "read": "Leer cv"
   },
   "projects": {
-    "title": "Proyectos"
+    "title": "Proyectos",
+    "items": [
+      {
+        "title": "Lucky Pick",
+        "description": "descripcion corta",
+        "icon": "/svg/book-tracker.svg",
+        "stack": [
+          {
+            "name": "React",
+            "icon": "/svg/react.svg"
+          },
+          {
+            "name": "tRPC",
+            "icon": "/svg/trpc.svg"
+          },
+          {
+            "name": "Express",
+            "icon": "/svg/express.svg"
+          }
+        ],
+        "href": "https://lucky-pick.com"
+      }
+    ]
   }
 }

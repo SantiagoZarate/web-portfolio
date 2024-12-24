@@ -3,10 +3,11 @@ interface Props {
   title: string
   description: string
   href: string
+  icon: string
   stack: { name: string; icon: string }[]
 }
 
-const { href, title, description, stack } = Astro.props
+const { href, title, description, stack, icon } = Astro.props
 ---
 
 <li
@@ -14,6 +15,7 @@ const { href, title, description, stack } = Astro.props
 >
   <a href={href} class='flex flex-col gap-2 p-2'>
     <header class='flex items-center gap-1'>
+      <img src={icon} alt={`${title} icon`} class='size-6' />
       <h2 class='font-semibold'>
         {title}
       </h2>

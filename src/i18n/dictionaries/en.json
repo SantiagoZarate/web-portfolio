@@ -94,6 +94,88 @@
     "read": "Read cv"
   },
   "projects": {
-    "title": "Projects"
+    "title": "Projects",
+    "items": [
+      {
+        "title": "Lucky Pick",
+        "description": "descripcion corta",
+        "icon": "/svg/lucky-pick.svg",
+        "stack": [
+          {
+            "name": "React",
+            "icon": "/svg/react.svg"
+          },
+          {
+            "name": "tRPC",
+            "icon": "/svg/trpc.svg"
+          },
+          {
+            "name": "Express",
+            "icon": "/svg/express.svg"
+          }
+        ],
+        "href": "https://lucky-pick.com"
+      },
+      {
+        "title": "Asadito",
+        "description": "Estima el costo total de tu asado.",
+        "icon": "/svg/asadito.svg",
+        "stack": [
+          {
+            "name": "React",
+            "icon": "/svg/react.svg"
+          },
+          {
+            "name": "Redux",
+            "icon": "/svg/redux.svg"
+          },
+          {
+            "name": "Tailwind",
+            "icon": "/svg/tailwind.svg"
+          }
+        ],
+        "href": "https://lucky-pick.com"
+      },
+      {
+        "title": "Book Tracker",
+        "description": "Track your reading progress",
+        "icon": "/svg/book-tracker.svg",
+        "stack": [
+          {
+            "name": "Nextjs",
+            "icon": "/svg/nextjs.svg"
+          },
+          {
+            "name": "Next Auth",
+            "icon": "/svg/next-auth.svg"
+          },
+          {
+            "name": "Tailwind",
+            "icon": "/svg/tailwind.svg"
+          }
+        ],
+        "href": "https://lucky-pick.com"
+      },
+      {
+        "title": "Paren la Data",
+        "description": "Statistics visualization",
+        "icon": "/svg/paren-la-data.svg",
+        "stack": [
+          {
+            "name": "Nextjs",
+            "icon": "/svg/nextjs.svg"
+          },
+          {
+            "name": "Drizzle",
+            "icon": "/svg/drizzle.svg"
+          },
+          {
+            "name": "Tailwind",
+            "icon": "/svg/tailwind.svg"
+          }
+        ],
+        "href": "https://lucky-pick.com"
+      }
+    ]
   }
 }
