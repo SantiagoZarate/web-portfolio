@@ -73,20 +73,6 @@
             "until": "Sep 2024"
           }
         ]
-      },
-      {
-        "company": "Freelance",
-        "description": "Servicios independientes peer-to-peer.",
-        "image": "/svg/freelance.svg",
-        "jobs": [
-          {
-            "role": "Desarrollador web front-end",
-            "contract": "Contrato de prácticas",
-            "project": "Hackathon - Plataforma de cursos",
-            "since": "Nov 2024",
-            "until": "Dic 2024"
-          }
-        ]
       }
     ]
   },
