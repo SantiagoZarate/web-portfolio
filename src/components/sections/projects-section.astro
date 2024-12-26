@@ -27,16 +27,18 @@ const i18n = getI18n(Astro.currentLocale)
 <script>
   import { animate, stagger } from 'motion'
 
-  animate(
-    '.project-card',
-    {
-      y: [20, 0],
-      opacity: [0, 1]
-    },
-    {
-      type: 'spring',
-      duration: 2,
-      delay: stagger(0.1)
-    }
-  )
+  document.addEventListener('astro:page-load', () => {
+    animate(
+      '.project-card',
+      {
+        y: [20, 0],
+        opacity: [0, 1]
+      },
+      {
+        type: 'spring',
+        duration: 2,
+        delay: stagger(0.1)
+      }
+    )
+  })
 </script>

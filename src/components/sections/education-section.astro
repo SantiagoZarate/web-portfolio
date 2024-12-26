@@ -69,7 +69,7 @@ console.dir(i18n.education)
         i18n.education.courses.map((course) => (
           <div
             data-done={course.done}
-            class='course relative bottom-0 flex flex-col justify-center gap-1 data-[done=true]:before:border-green-400 data-[done=true]:before:bg-green-700'
+            class='course relative bottom-0 flex flex-col justify-center gap-1 opacity-0 data-[done=true]:before:border-green-400 data-[done=true]:before:bg-green-700'
           >
             <p class='text-center text-xs font-semibold'>{course.name}</p>
             <ul class='flex flex-wrap place-content-center gap-1 px-6 text-secondary'>
@@ -89,28 +89,26 @@ console.dir(i18n.education)
 <script>
   import { animate, inView, stagger } from 'motion'
 
-  animate('.course', {
-    opacity: 0
+  document.addEventListener('astro:page-load', () => {
+    inView(
+      '.course',
+      (item) => {
+        animate(
+          item.target,
+          {
+            opacity: [0, 1],
+            filter: ['blur(10px)', 'blur(0px)']
+          },
+          {
+            type: 'spring',
+            duration: 2,
+            delay: stagger(0.2)
+          }
+        )
+      },
+      {
+        margin: '0px 0px -200px 0px'
+      }
+    )
   })
-
-  inView(
-    '.course',
-    (item) => {
-      animate(
-        item.target,
-        {
-          opacity: [0, 1],
-          filter: ['blur(10px)', 'blur(0px)']
-        },
-        {
-          type: 'spring',
-          duration: 2,
-          delay: stagger(0.2)
-        }
-      )
-    },
-    {
-      margin: '0px 0px -200px 0px'
-    }
-  )
 </script>

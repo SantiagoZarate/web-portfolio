@@ -40,10 +40,11 @@
     "description": "I’m <span class='font-semibold text-white'>Santiago Zarate</span>, a fullstack web Developer from Argentina with a passion for building intuitive UIs, and creating smooth, subtle animations to enhance user experiences."
   },
   "header": {
-    "role": "Fullstack Developer"
+    "role": "Fullstack Developer",
+    "status": "Open to work"
   },
   "experience": {
-    "title": "Education",
+    "title": "Experience",
     "jobs": [
       {
         "company": "No Country",
@@ -97,46 +98,6 @@
     "title": "Projects",
     "items": [
       {
-        "title": "Lucky Pick",
-        "description": "descripcion corta",
-        "icon": "/svg/lucky-pick.svg",
-        "stack": [
-          {
-            "name": "React",
-            "icon": "/svg/react.svg"
-          },
-          {
-            "name": "tRPC",
-            "icon": "/svg/trpc.svg"
-          },
-          {
-            "name": "Express",
-            "icon": "/svg/express.svg"
-          }
-        ],
-        "href": "https://lucky-pick.com"
-      },
-      {
-        "title": "Asadito",
-        "description": "Estima el costo total de tu asado.",
-        "icon": "/svg/asadito.svg",
-        "stack": [
-          {
-            "name": "React",
-            "icon": "/svg/react.svg"
-          },
-          {
-            "name": "Redux",
-            "icon": "/svg/redux.svg"
-          },
-          {
-            "name": "Tailwind",
-            "icon": "/svg/tailwind.svg"
-          }
-        ],
-        "href": "https://asadito.vercel.app/"
-      },
-      {
         "title": "Book Tracker",
         "description": "Track your reading progress",
         "icon": "/svg/book-tracker.svg",
@@ -155,6 +116,47 @@
           }
         ],
         "href": "https://book-tracker-flame.vercel.app/es"
+      },
+
+      {
+        "title": "Asadito",
+        "description": "Estimate the total cost of your barbecue.",
+        "icon": "/svg/asadito.svg",
+        "stack": [
+          {
+            "name": "React",
+            "icon": "/svg/react.svg"
+          },
+          {
+            "name": "Redux",
+            "icon": "/svg/redux.svg"
+          },
+          {
+            "name": "Tailwind",
+            "icon": "/svg/tailwind.svg"
+          }
+        ],
+        "href": "https://asadito.vercel.app/"
+      },
+      {
+        "title": "Lucky Pick",
+        "description": "descripcion corta",
+        "icon": "/svg/lucky-pick.svg",
+        "stack": [
+          {
+            "name": "React",
+            "icon": "/svg/react.svg"
+          },
+          {
+            "name": "tRPC",
+            "icon": "/svg/trpc.svg"
+          },
+          {
+            "name": "Express",
+            "icon": "/svg/express.svg"
+          }
+        ],
+        "href": "https://lucky-pick.com"
       },
       {
         "title": "Paren la Data",

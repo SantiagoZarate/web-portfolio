@@ -40,7 +40,8 @@
     "description": "Soy <span class='font-semibold text-white'>Santiago Zárate</span>, un desarrollador web fullstack de Argentina apasionado por crear interfaces de usuario intuitivas y crear animaciones fluidas y sutiles para mejorar las experiencias de los usuarios."
   },
   "header": {
-    "role": "Desarrollador Fullstack"
+    "role": "Desarrollador Fullstack",
+    "status": "Disponible para trabajar"
   },
   "experience": {
     "title": "Experiencia",
@@ -97,9 +98,50 @@
     "title": "Proyectos",
     "items": [
       {
-        "title": "Lucky Pick",
-        "description": "descripcion corta",
+        "title": "Book Tracker",
+        "description": "Rastrea tu progreso de lectura",
         "icon": "/svg/book-tracker.svg",
+        "stack": [
+          {
+            "name": "Nextjs",
+            "icon": "/svg/nextjs.svg"
+          },
+          {
+            "name": "Next Auth",
+            "icon": "/svg/next-auth.svg"
+          },
+          {
+            "name": "Shadcn",
+            "icon": "/svg/shadcn.svg"
+          }
+        ],
+        "href": "https://book-tracker-flame.vercel.app/es"
+      },
+
+      {
+        "title": "Asadito",
+        "description": "Estima el costo total de tu asado.",
+        "icon": "/svg/asadito.svg",
+        "stack": [
+          {
+            "name": "React",
+            "icon": "/svg/react.svg"
+          },
+          {
+            "name": "Redux",
+            "icon": "/svg/redux.svg"
+          },
+          {
+            "name": "Tailwind",
+            "icon": "/svg/tailwind.svg"
+          }
+        ],
+        "href": "https://asadito.vercel.app/"
+      },
+      {
+        "title": "Lucky Pick",
+        "description": "descripción corta",
+        "icon": "/svg/lucky-pick.svg",
         "stack": [
           {
             "name": "React",
@@ -115,6 +157,26 @@
           }
         ],
         "href": "https://lucky-pick.com"
+      },
+      {
+        "title": "Paren la Data",
+        "description": "Visualización de estadísticas",
+        "icon": "/svg/paren-la-data.svg",
+        "stack": [
+          {
+            "name": "Nextjs",
+            "icon": "/svg/nextjs.svg"
+          },
+          {
+            "name": "Drizzle",
+            "icon": "/svg/drizzle.svg"
+          },
+          {
+            "name": "SQL",
+            "icon": "/svg/database.svg"
+          }
+        ],
+        "href": "https://paren-la-data.vercel.app/"
       }
     ]
   }

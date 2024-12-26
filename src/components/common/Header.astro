@@ -1,7 +1,10 @@
 ---
 import socials from '@/data/socials.json'
+import { getI18n } from '@/i18n/getI18n'
 import './header.css'
+
 const lang = Astro.currentLocale
+const i18n = getI18n(lang)
 ---
 
 <header class='header fixed left-0 top-0 w-full px-6'>
@@ -27,7 +30,7 @@ const lang = Astro.currentLocale
           >
             <div class='size-1 animate-ping rounded-full bg-green-500'></div>
             <p class='text-[10px] capitalize text-secondary'>
-              available to work
+              {i18n.header.status}
             </p>
           </div>
         </section>
