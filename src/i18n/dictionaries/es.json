@@ -139,24 +139,24 @@
         "href": "https://asadito.vercel.app/"
       },
       {
-        "title": "Lucky Pick",
-        "description": "descripción corta",
-        "icon": "/svg/lucky-pick.svg",
+        "title": "Test Builder",
+        "description": "Generá exámenes para tus estudiantes",
+        "icon": "/svg/test-generator.svg",
         "stack": [
           {
             "name": "React",
             "icon": "/svg/react.svg"
           },
           {
-            "name": "tRPC",
-            "icon": "/svg/trpc.svg"
-          },
-          {
             "name": "Express",
             "icon": "/svg/express.svg"
+          },
+          {
+            "name": "Zustand",
+            "icon": "/svg/zustand.svg"
           }
         ],
-        "href": "https://lucky-pick.com"
+        "href": "https://test-generator-client.vercel.app/"
       },
       {
         "title": "Paren la Data",
