@@ -1,0 +1,38 @@
+---
+import Layout from '@/layouts/Layout.astro'
+
+const ARTICLES = [
+  {
+    label: 'Understanding AI',
+    href: 'https://leerob.com/ai',
+    icon: '/images/bookmarks/leerob.png'
+  }
+]
+---
+
+<Layout title='Santiago Zarate | Bookmark'>
+  <section class='flex flex-col gap-12'>
+    <header>
+      <h1>Bookmarks</h1>
+      <p>
+        List of articles, tools, books, guides i keep coming back to over time
+      </p>
+    </header>
+    <ul>
+      {
+        ARTICLES.map((article) => (
+          <li class='flex items-center gap-2'>
+            <img
+              class='h-4 w-4 object-cover'
+              src={article.icon}
+              alt={`${article.label} article icon`}
+            />
+            <a href={article.href} target='_blank'>
+              {article.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>
