@@ -1,7 +1,19 @@
-@import url('./colors.css');
+@import url('./colors.css') layer(components);
+@import 'tailwindcss/utilities' layer(utilities);
 
-@tailwind components;
-@tailwind utilities;
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-primary: hsl(var(--primary));
+  --color-secondary: hsl(var(--secondary));
+  --color-border: hsl(var(--border));
+  --color-muted: hsl(var(--muted));
+
+  --font-inter: Inter, sans-serif;
+
+  --breakpoint-tablet: 640px;
+}
 
 body {
   @apply overflow-x-hidden bg-background font-inter text-primary;
