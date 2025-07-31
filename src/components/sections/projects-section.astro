@@ -1,44 +1,42 @@
 ---
-import Card from '../Card.astro'
-import { getI18n } from '@/i18n/getI18n'
-const i18n = getI18n(Astro.currentLocale)
+import Card from "../Card.astro";
+import { getI18n } from "@/i18n/getI18n";
+const i18n = getI18n(Astro.currentLocale);
 ---
 
-<section class='group flex flex-col gap-4'>
-  <header class='flex items-center [&>:first-child]:mr-2'>
+<section class="group flex flex-col gap-4">
+  <header class="flex items-center [&>:first-child]:mr-2">
     <img
-      class='size-6 translate-x-4 rounded-md border border-primary/20 bg-muted p-1 text-white opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100'
-      src='/svg/cube.svg'
-      alt='projects icon'
+      class="size-6 translate-x-4 rounded-md border border-primary/20 bg-muted p-1 text-white opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"
+      src="/svg/cube.svg"
+      alt="projects icon"
     />
     <h3
-      class='-translate-x-8 font-semibold transition group-hover:translate-x-0'
+      class="-translate-x-8 font-semibold transition group-hover:translate-x-0"
     >
       {i18n.projects.title}
     </h3>
   </header>
   <ul
-    class='grid grid-cols-[repeat(auto-fit,minmax(min(100%,18em),1fr))] gap-2'
+    class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,18em),1fr))] gap-2"
   >
     {i18n.projects.items.map((project) => <Card {...project} />)}
   </ul>
 </section>
 
 <script>
-  import { animate, stagger } from 'motion'
+  import { animate, stagger } from "motion";
 
-  document.addEventListener('astro:page-load', () => {
-    animate(
-      '.project-card',
-      {
-        y: [20, 0],
-        opacity: [0, 1]
-      },
-      {
-        type: 'spring',
-        duration: 2,
-        delay: stagger(0.1)
-      }
-    )
-  })
+  animate(
+    ".project-card",
+    {
+      y: [20, 0],
+      opacity: [0, 1],
+    },
+    {
+      type: "spring",
+      duration: 2,
+      delay: stagger(0.1),
+    }
+  );
 </script>

@@ -3,7 +3,7 @@ import { getI18n } from "@/i18n/getI18n";
 const { experience, cv } = getI18n(Astro.currentLocale);
 ---
 
-<section class="experience-section group/exp flex flex-col gap-4 opacity-0">
+<section id="experiences" class="group/exp flex flex-col gap-4 opacity-0">
   <header class="flex items-center [&>:first-child]:mr-2">
     <img
       class="size-6 translate-x-4 rounded-md border border-primary/20 bg-muted p-1 text-white opacity-0 transition group-hover/exp:translate-x-0 group-hover/exp:opacity-100"
@@ -26,7 +26,7 @@ const { experience, cv } = getI18n(Astro.currentLocale);
               alt={exp.company + " logo"}
               src={exp.image}
             />
-            <section class="relative flex flex-col gap-1 rounded-lg border border-primary/20 bg-background px-3 py-1 transition group-hover:translate-x-0 group-hover:opacity-100 group-hover:blur-0 tablet:-translate-x-8 tablet:opacity-0 tablet:blur-sm">
+            <section class="relative flex flex-col gap-1 rounded-lg border border-primary/20 bg-background px-3 py-1 transition group-hover:translate-x-0 group-hover:opacity-100 tablet:-translate-x-8 tablet:opacity-0">
               <div class="absolute left-[-4px] top-[40%] size-2 rounded-xl border border-green-300 bg-green-700" />
               <p class="text-sm font-bold">{exp.company}</p>
               <p class="text-xs text-secondary">{exp.description}</p>
@@ -69,37 +69,32 @@ const { experience, cv } = getI18n(Astro.currentLocale);
 <script>
   import { animate, inView, stagger } from "motion";
 
-  document.addEventListener("astro:page-load", () => {
-    inView(
-      ".experience-section",
-      ({ target }) => {
-        animate(
-          target,
-          {
-            opacity: [0, 1],
-          },
-          {
-            type: "spring",
-            duration: 1,
-          }
-        );
-        animate(
-          target.querySelectorAll(".experience-project"),
-          {
-            y: [100, 0],
-            opacity: [0, 1],
-            filter: ["blur(10px)", "blur(0px)"],
-          },
-          {
-            type: "spring",
-            duration: 1,
-            delay: stagger(0.2),
-          }
-        );
-      },
-      {
-        margin: "-150px",
-      }
-    );
-  });
+  // fire as soon as we hit that selector in the DOM
+  inView(
+    "#experiences",
+    (target) => {
+      // fade in the section
+      animate(target, { opacity: [0, 1] }, { type: "spring", duration: 1 });
+      console.log("TRIGGERING ANIMATION");
+
+      // stagger‐animate each project
+      animate(
+        target.querySelectorAll(".experience-project"),
+        {
+          y: [100, 0],
+          opacity: [0, 1],
+          filter: ["blur(10px)", "blur(0px)"],
+        },
+        {
+          type: "spring",
+          duration: 1,
+          delay: stagger(0.2),
+        }
+      );
+    },
+    {
+      margin: "0px -150px 0px 0px",
+      amount: 0.25,
+    }
+  );
 </script>

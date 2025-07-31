@@ -91,9 +91,9 @@ const i18n = getI18n(Astro.currentLocale);
   document.addEventListener("astro:page-load", () => {
     inView(
       ".course",
-      (item) => {
+      (target) => {
         animate(
-          item.target,
+          target,
           {
             opacity: [0, 1],
             filter: ["blur(10px)", "blur(0px)"],
