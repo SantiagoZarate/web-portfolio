@@ -1,80 +1,79 @@
 ---
-import { getI18n } from '@/i18n/getI18n'
-import './education-timeline.css'
-const i18n = getI18n(Astro.currentLocale)
-console.dir(i18n.education)
+import { getI18n } from "@/i18n/getI18n";
+import "./education-timeline.css";
+const i18n = getI18n(Astro.currentLocale);
 ---
 
-<section class='group flex flex-col gap-4'>
-  <header class='flex items-center [&>:first-child]:mr-2'>
+<section class="group flex flex-col gap-4">
+  <header class="flex items-center [&>:first-child]:mr-2">
     <img
-      class='size-6 translate-x-4 rounded-md border border-primary/20 bg-muted p-1 text-white opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100'
-      src='/svg/academic-cap.svg'
-      alt='academic cap icon'
+      class="size-6 translate-x-4 rounded-md border border-primary/20 bg-muted p-1 text-white opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"
+      src="/svg/academic-cap.svg"
+      alt="academic cap icon"
     />
     <h3
-      class='-translate-x-8 font-semibold transition group-hover:translate-x-0'
+      class="-translate-x-8 font-semibold transition group-hover:translate-x-0"
     >
       {i18n.education.title}
     </h3>
   </header>
-  <header class='flex items-center gap-2'>
+  <header class="flex items-center gap-2">
     <img
-      src='/images/ungs.jpeg'
-      class='size-10 rounded-lg border border-primary/10 object-cover'
-      alt='ungs logo'
+      src="/images/ungs.jpeg"
+      class="size-10 rounded-lg border border-primary/10 object-cover"
+      alt="ungs logo"
     />
-    <section class='flex flex-col gap-1'>
-      <p class='font-semibold'>Universidad Nacional de General Sarmiento</p>
+    <section class="flex flex-col gap-1">
+      <p class="font-semibold">Universidad Nacional de General Sarmiento</p>
       <footer
-        class='flex flex-wrap items-baseline divide-muted *:flex-1 sm:divide-x sm:[&>:first-child]:pr-2 sm:[&>:last-child]:pl-2'
+        class="flex flex-wrap items-baseline divide-muted *:flex-1 sm:divide-x sm:[&>:first-child]:pr-2 sm:[&>:last-child]:pl-2"
       >
-        <p class='min-w-fit text-sm text-secondary'>
+        <p class="min-w-fit text-sm text-secondary">
           {i18n.education.carreer}
         </p>
-        <p class='min-w-fit text-xs'>{i18n.education.approved}</p>
+        <p class="min-w-fit text-xs">{i18n.education.approved}</p>
       </footer>
     </section>
   </header>
-  <section class='flex flex-col gap-6'>
-    <header class='flex flex-wrap items-center justify-between'>
-      <p class='text-sm font-semibold'>{i18n.education.latest}</p>
-      <aside class='flex items-center gap-2 text-xs'>
+  <section class="flex flex-col gap-6">
+    <header class="flex flex-wrap items-center justify-between">
+      <p class="text-sm font-semibold">{i18n.education.latest}</p>
+      <aside class="flex items-center gap-2 text-xs">
         <div
-          class='flex items-center gap-1 rounded-lg border border-border px-2 py-1'
+          class="flex items-center gap-1 rounded-lg border border-border px-2 py-1"
         >
           <span
-            class='size-2 rounded-full border border-green-400 bg-green-700'
+            class="size-2 rounded-full border border-green-400 bg-green-700"
           >
           </span>
           <p>{i18n.education.done}</p>
         </div>
         <div
-          class='flex items-center gap-1 rounded-lg border border-border px-2 py-1'
+          class="flex items-center gap-1 rounded-lg border border-border px-2 py-1"
         >
-          <span class='size-2 rounded-full border border-gray-400 bg-gray-700'>
+          <span class="size-2 rounded-full border border-gray-400 bg-gray-700">
           </span>
           <p>{i18n.education.next}</p>
         </div>
       </aside>
     </header>
-    <article class='timeline relative overflow-hidden *:aspect-square'>
+    <article class="timeline relative overflow-hidden *:aspect-square">
       <div
-        class='absolute inset-0 h-full w-full bg-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(50%_50%,black,transparent)]'
+        class="absolute inset-0 h-full w-full bg-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(50%_50%,black,transparent)]"
       >
       </div>
-      <div class='timeline-line border-l border-t border-dashed border-muted'>
+      <div class="timeline-line border-l border-t border-dashed border-muted">
       </div>
       {
         i18n.education.courses.map((course) => (
           <div
             data-done={course.done}
-            class='course relative bottom-0 flex flex-col justify-center gap-1 opacity-0 data-[done=true]:before:border-green-400 data-[done=true]:before:bg-green-700'
+            class="course relative bottom-0 flex flex-col justify-center gap-1 opacity-0 data-[done=true]:before:border-green-400 data-[done=true]:before:bg-green-700"
           >
-            <p class='text-center text-xs font-semibold'>{course.name}</p>
-            <ul class='flex flex-wrap place-content-center gap-1 px-6 text-secondary'>
+            <p class="text-center text-xs font-semibold">{course.name}</p>
+            <ul class="flex flex-wrap place-content-center gap-1 px-6 text-secondary">
               {course.skills.map((skill) => (
-                <li class='rounded-md border border-border p-1 text-[10px]'>
+                <li class="rounded-md border border-border p-1 text-[10px]">
                   {skill}
                 </li>
               ))}
@@ -87,28 +86,28 @@ console.dir(i18n.education)
 </section>
 
 <script>
-  import { animate, inView, stagger } from 'motion'
+  import { animate, inView, stagger } from "motion";
 
-  document.addEventListener('astro:page-load', () => {
+  document.addEventListener("astro:page-load", () => {
     inView(
-      '.course',
+      ".course",
       (item) => {
         animate(
           item.target,
           {
             opacity: [0, 1],
-            filter: ['blur(10px)', 'blur(0px)']
+            filter: ["blur(10px)", "blur(0px)"],
           },
           {
-            type: 'spring',
+            type: "spring",
             duration: 2,
-            delay: stagger(0.2)
+            delay: stagger(0.2),
           }
-        )
+        );
       },
       {
-        margin: '0px 0px -200px 0px'
+        margin: "0px 0px -200px 0px",
       }
-    )
-  })
+    );
+  });
 </script>

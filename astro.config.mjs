@@ -1,18 +1,21 @@
 // @ts-check
-import { defineConfig } from 'astro/config'
+import { defineConfig } from 'astro/config';
 
-import tailwindcss from '@tailwindcss/vite'
+import cloudflare from '@astrojs/cloudflare';
+
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'es'],
-    routing: {
-      prefixDefaultLocale: false
-    }
-  },
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true
+    },
+
+    imageService: "cloudflare"
+  }),
+
   vite: {
     plugins: [tailwindcss()]
   }
-})
+});
