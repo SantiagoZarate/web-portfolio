@@ -47,6 +47,20 @@
     "title": "Experience",
     "jobs": [
       {
+        "company": "Freelance",
+        "description": "Self-employed freelance web development projects",
+        "image": "/svg/freelance.svg",
+        "jobs": [
+          {
+            "role": "Full-stack Developer",
+            "contract": "Freelance",
+            "project": "Various client projects",
+            "since": "Jan 2025",
+            "until": "Present"
+          }
+        ]
+      },
+      {
         "company": "No Country",
         "description": "Jobs Simulation platform",
         "image": "/images/no-country.png",
@@ -74,6 +88,7 @@
           }
         ]
       }
+      
     ]
   },
   "cv": {
