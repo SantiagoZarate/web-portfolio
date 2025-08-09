@@ -1,93 +1,85 @@
 ---
-import Layout from '@/layouts/Layout.astro'
+import GoBackIcon from "@/components/ui/go-back-icon.astro";
+import Layout from "@/layouts/Layout.astro";
 
 const ARTICLES = [
   {
-    label: 'Understanding AI',
-    href: 'https://leerob.com/ai',
-    icon: '/images/bookmarks/leerob.png',
-    category: 'AI'
+    label: "Understanding AI",
+    href: "https://leerob.com/ai",
+    icon: "/images/bookmarks/leerob.png",
+    category: "AI",
   },
   {
-    label: 'Good vs Great Animations',
-    href: 'https://emilkowal.ski/ui/good-vs-great-animations',
-    icon: '/images/bookmarks/emil.png',
-    category: 'Animations'
+    label: "Good vs Great Animations",
+    href: "https://emilkowal.ski/ui/good-vs-great-animations",
+    icon: "/images/bookmarks/emil.png",
+    category: "Animations",
   },
   {
-    label: 'Making Sense of React Server Components',
-    href: 'https://www.joshwcomeau.com/react/server-components/',
-    icon: '/images/bookmarks/josh.png',
-    category: 'React'
+    label: "Making Sense of React Server Components",
+    href: "https://www.joshwcomeau.com/react/server-components/",
+    icon: "/images/bookmarks/josh.png",
+    category: "React",
   },
   {
-    label: 'Context Rot',
-    href: 'https://research.trychroma.com/context-rot',
-    icon: '/images/bookmarks/chroma.png',
-    category: 'AI'
+    label: "Context Rot",
+    href: "https://research.trychroma.com/context-rot",
+    icon: "/images/bookmarks/chroma.png",
+    category: "AI",
   },
   {
-    label: 'Crafting the Next.js Website',
-    href: 'https://rauno.me/craft/nextjs',
-    icon: '/images/bookmarks/rauno.png',
-    category: 'Design',
-    round: true
+    label: "Crafting the Next.js Website",
+    href: "https://rauno.me/craft/nextjs",
+    icon: "/images/bookmarks/rauno.png",
+    category: "Design",
+    round: true,
   },
   {
-    label: 'How do arrays work?',
-    href: 'https://nan-archive.vercel.app/how-arrays-work',
-    icon: '/images/bookmarks/nanda.jpg',
-    category: 'Computer Science',
-    round: true
+    label: "How do arrays work?",
+    href: "https://nan-archive.vercel.app/how-arrays-work",
+    icon: "/images/bookmarks/nanda.jpg",
+    category: "Computer Science",
+    round: true,
   },
   {
     label: "Animating Figma's SVG Exports",
-    href: 'https://courses.nan.fyi/blog/svg/animating-figma-exports',
-    icon: '/images/bookmarks/nanda.jpg',
-    category: 'Animations',
-    round: true
+    href: "https://courses.nan.fyi/blog/svg/animating-figma-exports",
+    icon: "/images/bookmarks/nanda.jpg",
+    category: "Animations",
+    round: true,
   },
   {
-    label: 'What Is An AI Engineer?',
-    href: 'https://www.aihero.dev/what-is-an-ai-engineer',
-    icon: '/images/bookmarks/ai-hero.png',
-    category: 'AI'
-  }
-]
+    label: "What Is An AI Engineer?",
+    href: "https://www.aihero.dev/what-is-an-ai-engineer",
+    icon: "/images/bookmarks/ai-hero.png",
+    category: "AI",
+  },
+];
 
 const TOOLS = [
   {
-    label: 'UI Land',
-    href: 'https://ui.land',
-    icon: '/images/bookmarks/ui-land.png',
-    category: 'Digital Library for Designers and Engineers'
+    label: "UI Land",
+    href: "https://ui.land",
+    icon: "/images/bookmarks/ui-land.png",
+    category: "Digital Library for Designers and Engineers",
   },
   {
-    label: 'Helpy UI',
-    href: 'https://helpy-ui.com/',
-    icon: '/images/bookmarks/helpy-ui.png',
-    category: 'all the good stuff developers actually use'
-  }
-]
+    label: "Helpy UI",
+    href: "https://helpy-ui.com/",
+    icon: "/images/bookmarks/helpy-ui.png",
+    category: "all the good stuff developers actually use",
+  },
+];
 
 const SECTIONS = [
-  { title: 'Articles', items: ARTICLES },
-  { title: 'Tools / Resources', items: TOOLS }
-]
+  { title: "Articles", items: ARTICLES },
+  { title: "Tools / Resources", items: TOOLS },
+];
 ---
 
-<Layout title='Santiago Zarate | Bookmark'>
-  <section class='flex flex-col gap-12'>
-    <a
-      href='/'
-      class='bg-muted group w-fit rounded-md border border-white/10 p-1'
-    >
-      <img
-        alt='go back arrow icon'
-        src='/svg/go-back-arrow.svg'
-        class='size-4 opacity-50 transition group-hover:opacity-100'
-      /></a
-    >
+<Layout title="Santiago Zarate | Bookmark">
+  <section class="flex flex-col gap-12">
+    <GoBackIcon href="/" />
     <header>
       <h1>Bookmarks</h1>
       <p>List of articles, tools, guides I keep coming back to over time</p>
@@ -95,27 +87,27 @@ const SECTIONS = [
 
     {
       SECTIONS.map((section) => (
-        <section class='flex flex-col gap-6'>
-          <h2 class='text-xl font-semibold'>{section.title}</h2>
-          <ul class='flex flex-col gap-2'>
+        <section class="flex flex-col gap-6">
+          <h2 class="text-xl font-semibold">{section.title}</h2>
+          <ul class="flex flex-col gap-2">
             {section.items.map((item) => (
-              <li class='flex items-center gap-2 rounded-md p-2 transition hover:bg-white/10'>
+              <li class="flex items-center gap-2 rounded-md p-2 transition hover:bg-white/10">
                 <img
-                  data-round={item.round ? '' : null}
-                  class='h-6 w-6 object-cover data-round:rounded-full'
+                  data-round={item.round ? "" : null}
+                  class="h-6 w-6 object-cover data-round:rounded-full"
                   src={item.icon}
                   alt={`${item.label} icon`}
                 />
-                <div class='flex flex-col gap-1'>
+                <div class="flex flex-col gap-1">
                   <a
                     href={item.href}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    class='font-semibold'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-semibold"
                   >
                     {item.label}
                   </a>
-                  <p class='text-secondary text-xs'>{item.category}</p>
+                  <p class="text-secondary text-xs">{item.category}</p>
                 </div>
               </li>
             ))}

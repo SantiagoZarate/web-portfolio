@@ -1,41 +1,44 @@
 ---
-import socials from '@/data/socials.json'
+import socials from "@/data/socials.json";
 ---
 
 <footer
-  class='border-border mt-20 flex flex-wrap justify-between gap-4 border-t pt-6 pb-12'
+  class="border-border mt-20 flex flex-wrap justify-between gap-4 border-t pt-6 pb-12"
 >
-  <section class='flex flex-col gap-2'>
-    <p class='text-xs'>Powered by Astro</p>
+  <section class="flex flex-col gap-2">
+    <p class="text-xs">Powered by Astro</p>
     <a
-      href='https://github.com/SantiagoZarate/web-portfolio'
-      class='group text-secondary flex items-center gap-2 text-xs'
-      target='_blank'
+      href="https://github.com/SantiagoZarate/web-portfolio"
+      class="group text-secondary flex items-center gap-2 text-xs"
+      target="_blank"
     >
       Source code
       <img
-        alt='Top rigth arrow icon'
-        src='/svg/arrow-up-rigth.svg'
-        class='size-4 opacity-50 transition group-hover:translate-x-[2px] group-hover:translate-y-[-2px] group-hover:opacity-100'
+        alt="Top rigth arrow icon"
+        src="/svg/arrow-up-rigth.svg"
+        class="size-4 opacity-50 transition group-hover:translate-x-[2px] group-hover:translate-y-[-2px] group-hover:opacity-100"
       />
     </a>
     <a
-      href='./bookmarks'
-      class='text-secondary flex items-center gap-2 text-xs'
+      href="./bookmarks"
+      class="text-secondary flex items-center gap-2 text-xs"
     >
       Bookmarks
     </a>
+    <a href="./n" class="text-secondary flex items-center gap-2 text-xs">
+      Notes
+    </a>
   </section>
-  <section class='flex gap-6'>
-    <article class='flex flex-col gap-4'>
-      <p class='text-sm font-semibold'>Connect</p>
-      <nav class='flex flex-col'>
+  <section class="flex gap-6">
+    <article class="flex flex-col gap-4">
+      <p class="text-sm font-semibold">Connect</p>
+      <nav class="flex flex-col">
         {
           socials.map((social) => (
             <a
-              class='text-secondary hover:text-primary py-2 text-xs transition'
+              class="text-secondary hover:text-primary py-2 text-xs transition"
               href={social.href}
-              target='_blank'
+              target="_blank"
             >
               {social.name}
             </a>

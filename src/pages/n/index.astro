@@ -1,0 +1,248 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NoteCard from "../../components/NoteCard.astro";
+import notes from "../../data/notes.json";
+
+// Sort notes by date (newest first)
+const sortedNotes = notes.sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
+// Group notes by topic for filtering
+const notesByTopic = notes.reduce(
+  (acc, note) => {
+    if (!acc[note.topic]) {
+      acc[note.topic] = [];
+    }
+    acc[note.topic].push(note);
+    return acc;
+  },
+  {} as Record<string, typeof notes>
+);
+
+const topics = Object.keys(notesByTopic);
+---
+
+<Layout title="Notes | Santiago Zarate">
+  <div class="notes-container">
+    <!-- Header Section -->
+    <section class="mb-12">
+      <div id="notes-header" class="text-center">
+        <h1 class="text-4xl font-bold text-foreground mb-4">My Notes</h1>
+        <p class="text-lg text-secondary max-w-2xl mx-auto">
+          These are not tutorials or guides, but rather my own experiences and
+          solutions that I want to keep track of for future reference.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="mb-8">
+      <div id="filter-section" class="flex flex-wrap gap-3 justify-center">
+        <button
+          class="filter-btn active px-4 py-2 rounded-full border border-border bg-background text-sm font-medium transition-all hover:bg-muted"
+          data-topic="all"
+        >
+          All ({sortedNotes.length})
+        </button>
+        {
+          topics.map((topic) => (
+            <button
+              class="filter-btn px-4 py-2 rounded-full border border-border bg-background text-sm font-medium transition-all hover:bg-muted"
+              data-topic={topic}
+            >
+              {topic} ({notesByTopic[topic].length})
+            </button>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Notes Grid -->
+    <section>
+      <div id="notes-grid" class="grid gap-6 sm:grid-cols-2">
+        {
+          sortedNotes.map((note, index) => (
+            <div class="note-item" data-topic={note.topic} data-index={index}>
+              <NoteCard {...note} />
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Empty state (hidden by default) -->
+    <div id="empty-state" class="hidden text-center py-12">
+      <p class="text-secondary text-lg">
+        No notes found for the selected topic.
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import { animate, stagger } from "motion";
+
+  // Animation configuration
+  const STAGGER_DELAY = 0.1;
+  const ANIMATION_DURATION = 0.4;
+
+  // Initialize animations when page loads
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   setupFilterFunctionality();
+  // });
+
+  animate(
+    "#notes-header",
+    {
+      opacity: [0, 1],
+      y: [30, 0],
+    },
+    {
+      duration: ANIMATION_DURATION,
+      type: "spring",
+    }
+  );
+
+  // Filter section animation
+  animate(
+    "#filter-section",
+    {
+      opacity: [0, 1],
+    },
+    {
+      duration: ANIMATION_DURATION,
+      delay: 0.2,
+    }
+  );
+
+  animate(
+    ".note-item",
+    {
+      opacity: [0, 1],
+      scale: [0.95, 1],
+    },
+    {
+      duration: ANIMATION_DURATION,
+      delay: stagger(0.1),
+    }
+  );
+
+  function setupFilterFunctionality() {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const noteItems = document.querySelectorAll(".note-item");
+    const emptyState = document.getElementById("empty-state");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const topic = button.getAttribute("data-topic");
+
+        // Update active state
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        // Filter and animate
+        filterNotes(topic!, noteItems, emptyState);
+      });
+    });
+  }
+
+  function filterNotes(
+    topic: string,
+    noteItems: NodeListOf<Element>,
+    emptyState: HTMLElement | null
+  ) {
+    // First, animate out all items
+    animate(
+      noteItems,
+      {
+        opacity: 0,
+        scale: 0.9,
+        y: -20,
+      },
+      {
+        duration: 0.3,
+      }
+    ).finished.then(() => {
+      // Filter items
+      const visibleItems: Element[] = [];
+
+      noteItems.forEach((item) => {
+        const itemTopic = item.getAttribute("data-topic");
+        const shouldShow = topic === "all" || itemTopic === topic;
+
+        if (shouldShow) {
+          item.classList.remove("hidden");
+          visibleItems.push(item);
+        } else {
+          item.classList.add("hidden");
+        }
+      });
+
+      // Show/hide empty state
+      if (emptyState) {
+        if (visibleItems.length === 0) {
+          emptyState.classList.remove("hidden");
+        } else {
+          emptyState.classList.add("hidden");
+        }
+      }
+
+      // Animate in visible items with stagger
+      if (visibleItems.length > 0) {
+        animate(
+          visibleItems,
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+          },
+          {
+            duration: ANIMATION_DURATION,
+            delay: stagger(STAGGER_DELAY / 2),
+          }
+        );
+      }
+    });
+  }
+</script>
+
+<style>
+  /* .notes-container {
+    animation: fadeIn 0.8s ease-out;
+  } */
+
+  .filter-btn.active {
+    background: rgb(var(--color-primary) / 0.1);
+    border-color: rgb(var(--color-primary) / 0.3);
+    color: rgb(var(--color-primary));
+  }
+
+  .note-item {
+    transform-origin: center;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive grid adjustments */
+  @media (max-width: 640px) {
+    #notes-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    #notes-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

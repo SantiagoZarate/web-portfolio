@@ -1,0 +1,40 @@
+---
+import GoBackIcon from "@/components/ui/go-back-icon.astro";
+import Prose from "@/components/ui/prose.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+import { format, formatDistanceToNow } from "date-fns";
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const notes = await getCollection("notes");
+
+  return notes.map((note) => ({
+    params: { slug: note.data.slug },
+    props: { note },
+  }));
+}
+
+// 2. For your template, you can get the entry directly from the prop
+const { note } = Astro.props;
+const { Content } = await render(note);
+
+// Format the date
+const noteDate = new Date(note.data.date);
+const formattedDate = format(noteDate, "MMMM dd, yyyy");
+const relativeTime = formatDistanceToNow(noteDate, { addSuffix: true });
+---
+
+<Layout title={`${note.data.title} - Santiago Zarate`}>
+  <section class="flex flex-col gap-6">
+    <GoBackIcon href="/n" />
+    <Prose>
+      <h1>{note.data.title}</h1>
+      <div class="text-sm text-gray-500 dark:text-gray-400 mb-6">
+        <time datetime={note.data.date.toISOString()}>{formattedDate}</time>
+        <span class="mx-2">•</span>
+        <span>{relativeTime}</span>
+      </div>
+      <Content />
+    </Prose>
+  </section>
+</Layout>

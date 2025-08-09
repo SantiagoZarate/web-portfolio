@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "title": "Docker Container Optimization",
+    "date": "2024-01-15",
+    "description": "Best practices for optimizing Docker containers including multi-stage builds, layer caching, and security considerations.",
+    "topic": "Docker",
+    "slug": "docker-container-optimization"
+  },
+  {
+    "id": "2",
+    "title": "React Server Components Deep Dive",
+    "date": "2024-01-12",
+    "description": "Understanding the fundamental concepts of React Server Components and how they improve performance and user experience.",
+    "topic": "webdev",
+    "slug": "react-server-components"
+  },
+  {
+    "id": "3",
+    "title": "CSS Animation Performance",
+    "date": "2024-01-10",
+    "description": "Techniques for creating smooth, performant CSS animations including transform optimizations and GPU acceleration.",
+    "topic": "animations",
+    "slug": "css-animation-performance"
+  },
+  {
+    "id": "4",
+    "title": "Advanced Docker Networking",
+    "date": "2024-01-08",
+    "description": "Complex Docker networking scenarios including custom networks, bridge configurations, and container communication.",
+    "topic": "Docker",
+    "slug": "advanced-docker-networking"
+  },
+  {
+    "id": "5",
+    "title": "Modern JavaScript Bundling",
+    "date": "2024-01-05",
+    "description": "Comparison of modern bundlers like Vite, Webpack 5, and esbuild with performance considerations and use cases.",
+    "topic": "webdev",
+    "slug": "modern-javascript-bundling"
+  },
+  {
+    "id": "6",
+    "title": "Framer Motion Advanced Patterns",
+    "date": "2024-01-03",
+    "description": "Advanced animation patterns using Framer Motion including layout animations, shared layout transitions, and gesture handling.",
+    "topic": "animations",
+    "slug": "framer-motion-advanced"
+  },
+  {
+    "id": "7",
+    "title": "Docker Compose for Development",
+    "date": "2024-01-01",
+    "description": "Setting up efficient development environments using Docker Compose with hot reloading and debugging capabilities.",
+    "topic": "Docker",
+    "slug": "docker-compose-development"
+  },
+  {
+    "id": "8",
+    "title": "Web Performance Monitoring",
+    "date": "2023-12-28",
+    "description": "Tools and techniques for monitoring web performance including Core Web Vitals, RUM, and synthetic monitoring.",
+    "topic": "webdev",
+    "slug": "web-performance-monitoring"
+  }
+]
