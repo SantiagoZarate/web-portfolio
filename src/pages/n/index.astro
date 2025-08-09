@@ -1,26 +1,39 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import NoteCard from "../../components/NoteCard.astro";
-import notes from "../../data/notes.json";
+import { getCollection } from "astro:content";
+
+// Get all notes from the collection
+const allNotes = await getCollection("notes");
+
+// Transform collection data to match component expectations
+const notes = allNotes.map((note) => ({
+  id: note.id,
+  slug: note.data.slug,
+  title: note.data.title,
+  category: note.data.category,
+  date: note.data.date,
+  description: note.data.description,
+}));
 
 // Sort notes by date (newest first)
 const sortedNotes = notes.sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 );
 
-// Group notes by topic for filtering
-const notesByTopic = notes.reduce(
+// Group notes by category for filtering
+const notesByCategory = notes.reduce(
   (acc, note) => {
-    if (!acc[note.topic]) {
-      acc[note.topic] = [];
+    if (!acc[note.category]) {
+      acc[note.category] = [];
     }
-    acc[note.topic].push(note);
+    acc[note.category].push(note);
     return acc;
   },
   {} as Record<string, typeof notes>
 );
 
-const topics = Object.keys(notesByTopic);
+const categories = Object.keys(notesByCategory);
 ---
 
 <Layout title="Notes | Santiago Zarate">
@@ -41,17 +54,17 @@ const topics = Object.keys(notesByTopic);
       <div id="filter-section" class="flex flex-wrap gap-3 justify-center">
         <button
           class="filter-btn active px-4 py-2 rounded-full border border-border bg-background text-sm font-medium transition-all hover:bg-muted"
-          data-topic="all"
+          data-category="all"
         >
           All ({sortedNotes.length})
         </button>
         {
-          topics.map((topic) => (
+          categories.map((category) => (
             <button
               class="filter-btn px-4 py-2 rounded-full border border-border bg-background text-sm font-medium transition-all hover:bg-muted"
-              data-topic={topic}
+              data-category={category}
             >
-              {topic} ({notesByTopic[topic].length})
+              {category} ({notesByCategory[category].length})
             </button>
           ))
         }
@@ -63,7 +76,11 @@ const topics = Object.keys(notesByTopic);
       <div id="notes-grid" class="grid gap-6 sm:grid-cols-2">
         {
           sortedNotes.map((note, index) => (
-            <div class="note-item" data-topic={note.topic} data-index={index}>
+            <div
+              class="note-item"
+              data-category={note.category}
+              data-index={index}
+            >
               <NoteCard {...note} />
             </div>
           ))
@@ -74,7 +91,7 @@ const topics = Object.keys(notesByTopic);
     <!-- Empty state (hidden by default) -->
     <div id="empty-state" class="hidden text-center py-12">
       <p class="text-secondary text-lg">
-        No notes found for the selected topic.
+        No notes found for the selected category.
       </p>
     </div>
   </div>
@@ -88,9 +105,9 @@ const topics = Object.keys(notesByTopic);
   const ANIMATION_DURATION = 0.4;
 
   // Initialize animations when page loads
-  // document.addEventListener("DOMContentLoaded", () => {
-  //   setupFilterFunctionality();
-  // });
+  document.addEventListener("DOMContentLoaded", () => {
+    setupFilterFunctionality();
+  });
 
   animate(
     "#notes-header",
@@ -135,20 +152,20 @@ const topics = Object.keys(notesByTopic);
 
     filterButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        const topic = button.getAttribute("data-topic");
+        const category = button.getAttribute("data-category");
 
         // Update active state
         filterButtons.forEach((btn) => btn.classList.remove("active"));
         button.classList.add("active");
 
         // Filter and animate
-        filterNotes(topic!, noteItems, emptyState);
+        filterNotes(category!, noteItems, emptyState);
       });
     });
   }
 
   function filterNotes(
-    topic: string,
+    category: string,
     noteItems: NodeListOf<Element>,
     emptyState: HTMLElement | null
   ) {
@@ -168,8 +185,8 @@ const topics = Object.keys(notesByTopic);
       const visibleItems: Element[] = [];
 
       noteItems.forEach((item) => {
-        const itemTopic = item.getAttribute("data-topic");
-        const shouldShow = topic === "all" || itemTopic === topic;
+        const itemCategory = item.getAttribute("data-category");
+        const shouldShow = category === "all" || itemCategory === category;
 
         if (shouldShow) {
           item.classList.remove("hidden");
