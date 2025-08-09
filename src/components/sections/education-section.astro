@@ -67,8 +67,8 @@ const i18n = getI18n(Astro.currentLocale);
       {
         i18n.education.courses.map((course) => (
           <div
-            data-done={course.done}
-            class="course relative bottom-0 flex flex-col justify-center gap-1 opacity-0 data-[done=true]:before:border-green-400 data-[done=true]:before:bg-green-700"
+            data-done={JSON.parse(course.done) ? "" : null}
+            class="course relative bottom-0 flex flex-col justify-center gap-1 opacity-0 data-done:before:border-green-400 before:bg-gray-400 data-done:before:bg-green-700"
           >
             <p class="text-center text-xs font-semibold">{course.name}</p>
             <ul class="flex flex-wrap place-content-center gap-1 px-6 text-secondary">

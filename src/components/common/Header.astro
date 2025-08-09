@@ -1,68 +1,70 @@
 ---
-import socials from '@/data/socials.json'
-import { getI18n } from '@/i18n/getI18n'
-import './header.css'
+import socials from "@/data/socials.json";
+import { getI18n } from "@/i18n/getI18n";
+import "./header.css";
 
-const lang = Astro.currentLocale
-const i18n = getI18n(lang)
+const lang = Astro.currentLocale;
+const i18n = getI18n(lang);
 ---
 
-<header class='header fixed left-0 top-0 w-full px-6'>
+<header class="header fixed left-0 top-0 w-full px-6">
   <div
-    class='mx-auto flex max-w-(--breakpoint-tablet) items-center justify-between gap-6'
+    class="mx-auto flex max-w-(--breakpoint-tablet) items-center justify-between gap-6"
   >
-    <section class='flex items-center gap-2'>
-      <img
-        class='pfp'
-        src='/images/yo.webp'
-        alt='Santiago zarate profile picture'
-      />
-      <section class='flex flex-col gap-1'>
+    <section class="flex items-center gap-2">
+      <a href="/">
+        <img
+          class="pfp"
+          src="/images/yo.webp"
+          alt="Santiago zarate profile picture"
+        />
+      </a>
+      <section class="flex flex-col gap-1">
         <header
-          class='flex flex-wrap items-center divide-muted *:flex-1 sm:divide-x sm:[&>:first-child]:pr-2 sm:[&>:last-child]:pl-2'
+          class="flex flex-wrap items-center divide-muted *:flex-1 sm:divide-x sm:[&>:first-child]:pr-2 sm:[&>:last-child]:pl-2"
         >
-          <h3 class='min-w-fit'>Santiago Zarate</h3>
-          <p class='min-w-fit text-sm text-secondary'>Fullstack Developer</p>
+          <h3 class="min-w-fit">Santiago Zarate</h3>
+          <p class="min-w-fit text-sm text-secondary">Fullstack Developer</p>
         </header>
-        <section class='flex items-center gap-2'>
+        <section class="flex items-center gap-2">
           <div
-            class='flex items-center gap-2 rounded-full border border-border bg-background px-2 py-1'
+            class="flex items-center gap-2 rounded-full border border-border bg-background px-2 py-1"
           >
-            <div class='size-1 animate-ping rounded-full bg-green-500'></div>
-            <p class='text-[10px] capitalize text-secondary'>
+            <div class="size-1 animate-ping rounded-full bg-green-500"></div>
+            <p class="text-[10px] capitalize text-secondary">
               {i18n.header.status}
             </p>
           </div>
         </section>
       </section>
     </section>
-    <section class='flex items-center gap-2'>
+    <section class="flex items-center gap-2">
       <a
-        class='relative rounded-lg px-4 py-2 transition hover:bg-muted'
-        href={lang === 'es' ? '/' : '/es'}
+        class="relative rounded-lg px-4 py-2 transition hover:bg-muted"
+        href={lang === "es" ? "/" : "/es"}
       >
-        <img src='/svg/world.svg' class='size-6' alt='language switcher' />
+        <img src="/svg/world.svg" class="size-6" alt="language switcher" />
         <span
-          class='absolute -bottom-0 -right-0 rounded-md border border-border bg-background px-1 text-xs'
+          class="absolute -bottom-0 -right-0 rounded-md border border-border bg-background px-1 text-xs"
         >
           {lang}
         </span>
       </a>
-      <nav class='flex gap-2'>
+      <nav class="flex gap-2">
         {
           socials.map((social) => (
             <a
-              target='_blank'
+              target="_blank"
               href={social.href}
-              class='group grid grid-cols-1'
+              class="group grid grid-cols-1"
             >
               <img
-                class='size-6 translate-y-2 opacity-0 transition [grid-area:1/-1] group-hover:translate-y-0 group-hover:opacity-100'
-                alt='arrow up rigth icon'
-                src='/svg/arrow-up-rigth.svg'
+                class="size-6 translate-y-2 opacity-0 transition [grid-area:1/-1] group-hover:translate-y-0 group-hover:opacity-100"
+                alt="arrow up rigth icon"
+                src="/svg/arrow-up-rigth.svg"
               />
               <img
-                class='size-6 transition [grid-area:1/-1] group-hover:-translate-y-2 group-hover:opacity-0'
+                class="size-6 transition [grid-area:1/-1] group-hover:-translate-y-2 group-hover:opacity-0"
                 alt={`${social.href} icon`}
                 src={social.icon}
               />
