@@ -91,24 +91,24 @@ const SECTIONS = [
           <h2 class="text-xl font-semibold">{section.title}</h2>
           <ul class="flex flex-col gap-2">
             {section.items.map((item) => (
-              <li class="flex items-center gap-2 rounded-md p-2 transition hover:bg-white/10">
-                <img
-                  data-round={item.round ? "" : null}
-                  class="h-6 w-6 object-cover data-round:rounded-full"
-                  src={item.icon}
-                  alt={`${item.label} icon`}
-                />
-                <div class="flex flex-col gap-1">
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="font-semibold"
-                  >
-                    {item.label}
-                  </a>
-                  <p class="text-secondary text-xs">{item.category}</p>
-                </div>
+              <li>
+                <a
+                  class="flex items-center gap-2 rounded-md p-2 transition hover:bg-white/10"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    data-round={item.round ? "" : null}
+                    class="h-6 w-6 object-cover data-round:rounded-full"
+                    src={item.icon}
+                    alt={`${item.label} icon`}
+                  />
+                  <div class="flex flex-col gap-1">
+                    <p class="font-semibold">{item.label}</p>
+                    <p class="text-secondary text-xs">{item.category}</p>
+                  </div>
+                </a>
               </li>
             ))}
           </ul>
